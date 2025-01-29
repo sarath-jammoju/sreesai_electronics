@@ -11,18 +11,25 @@ const ProductsCards = ({ products }) => {
   };
 
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    // Basic email validation
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailRegex.test(email)) {
-      setError("Please enter a valid email address.");
-    } else {
-      setError("");
-      alert(`Form submitted with email: ${email}`); // Placeholder for form submission logic
+    // Basic validation
+    if (!email || !message) {
+      setError("All fields are required!");
+      return;
     }
+
+    // Simulating form submission
+    console.log("Form submitted:", { email, message });
+
+    // Reset form after submission
+    setEmail("");
+    setMessage("");
+    setError("");
   };
 
   return (
@@ -57,17 +64,20 @@ const ProductsCards = ({ products }) => {
           </div>
         ))}
       </div>
-
-      <div className="dialog-box-container">
-        <h2 className="dialog-box-header">
-          Get in Touch with Sree Sai Electronics
-        </h2>
-        <p className="dialog-box-description">
-          Have questions or need assistance with our electronic products? Feel
-          free to contact us! Our team is ready to assist you with any
-          inquiries.
-        </p>
-        <form onSubmit={handleFormSubmit}>
+      <div>
+        <h3 className="services">One stop sollution for all your needs</h3>
+      </div>
+      
+    
+<div className="dialog-box-container">
+      <h2 className="dialog-box-header">
+        Have questions or need assistance with our electronic products?
+      </h2>
+      <h2 className="dialog-box-description">
+        Feel free to contact us! Our team is ready to assist you with any inquiries.
+      </h2>
+      <form onSubmit={handleFormSubmit} className="dialog-form">
+        <div className="dialog-form-left">
           <div className="dialog-form-group">
             <label htmlFor="email" className="dialog-form-label">
               Enter your email:
@@ -77,16 +87,33 @@ const ProductsCards = ({ products }) => {
               id="email"
               placeholder="Enter your email"
               value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="dialog-form-input"
               required
             />
-            {error && <p className="dialog-error-message">{error}</p>}
           </div>
-          <button type="submit" className="dialog-submit-button">
-            Submit
-          </button>
-        </form>
-      </div>
+        </div>
+
+        <div className="dialog-form-right">
+          <div className="contact-details">
+            <h3>Contact Details</h3>
+            <h4>Email: contact@yourelectronics.com</h4>
+            <h4>Phone: +123 456 7890</h4>
+            <h4>Address: 123 Electronics St, Tech City</h4>
+          </div>
+        </div>
+
+        
+
+        {error && <p className="dialog-error-message">{error}</p>}
+        <button type="submit" className="dialog-submit-button">
+          Submit
+        </button>
+      </form>
+    </div>
+
+
+      );
     </>
   );
 };

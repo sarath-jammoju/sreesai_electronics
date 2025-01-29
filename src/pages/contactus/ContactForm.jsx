@@ -1,8 +1,7 @@
-
 import React, { useState } from "react";
-import '../contactus/contactus.css'
-import contact_img from '../../assets/contactus_image.jpg'
- 
+// import '../contactus/contactus.css';
+import contact_img from '../../assets/contactus_image.jpg';
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -10,9 +9,9 @@ const ContactForm = () => {
     email: "",
     message: "",
   });
- 
+
   const [error, setError] = useState(null);
- 
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -20,10 +19,10 @@ const ContactForm = () => {
       [name]: value,
     }));
   };
- 
+
   const handleSubmit = (e) => {
     e.preventDefault();
- 
+
     setFormData({
       name: "",
       number: "",
@@ -31,15 +30,33 @@ const ContactForm = () => {
       message: "",
     });
   };
- 
+
   return (
-    <div className="contact-container m">
-      <div className="contact-image-container">
-        <img
-          src={contact_img}
-          alt="Sree Sai Electronics"
-        />
+    <div className="contact-container">
+      {/* Left half - Personal Information */}
+      <div className="contact-info-container">
+        <h2>Contact Information</h2>
+        <p>
+          <strong>Email:</strong> <br />
+          info@sreesaielectronics.co.in
+        </p>
+        <p>
+          <strong>Phone:</strong> <br />
+          <span>+91 8008884167</span> <br /> 
+          <span>+91 7569299875</span> 
+        </p>
+        <p>
+          <strong>Address:</strong> <br />
+          Building, 13, Green Color, 3, Arundelpet, Guntur, 
+          Andhra Pradesh 522002
+        </p>
+        <p>
+          <strong>Business Hours:</strong> <br />
+          Mon-Fri, 9 AM - 6 PM
+        </p>
       </div>
+
+      {/* Right half - Contact Form */}
       <div className="contact-form-container">
         <h2>Contact Us</h2>
         <form onSubmit={handleSubmit}>
@@ -88,5 +105,5 @@ const ContactForm = () => {
     </div>
   );
 };
- 
+
 export default ContactForm;

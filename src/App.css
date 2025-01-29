@@ -218,8 +218,7 @@
   padding: var(--space-xs);
   margin-bottom: var(--space-lg);
   color: var(--color-primary);
-  background-color: var(--color-background);
-  text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5); /* Apply text shadow */
+   text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5); /* Apply text shadow */
   
 }
 
@@ -237,8 +236,7 @@
 .carousel-item {
   display: inline-block;
   margin-right: var(--space-lg);
-  background-color: #ffffff; /* Background color for logos */
-  padding: var(--space-sm);
+ padding: var(--space-sm);
   border-radius: var(--border-radius-sm); /* Rounded corners for the logos container */
   box-shadow: var(--box-shadow-light);
 }
@@ -284,10 +282,8 @@
   font-size: var(--font-size-xxl);
   font-weight: bold;
   color: rgb(0, 0, 0);
-  background-color: #fafafa;
   margin-bottom: var(--space-lg); 
   color: var(--color-primary);
-  background-color: var(--color-background);
   text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5); /* Apply text shadow */
 }
 
@@ -384,8 +380,7 @@
   font-size: var(--font-size-xxl); 
   font-weight: 600;
   color: var(--color-primary);
-  background-color: var(--color-background);
-  text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5); /* Apply text shadow */
+   text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5); /* Apply text shadow */
   margin-bottom: var(--space-xl); 
   font-family: var(--font-secondary);
 }
@@ -439,6 +434,65 @@
 }
 
 
+/* =====================================
+        Clients
+=========================================*/
+
+.clients-container {
+  padding: var(--space-lg);
+  text-align: center;
+  color: white; /* Text color */
+  max-width: 1200px;
+  margin: 0 auto; /* Center the container */
+}
+
+.clients-header {
+  color: var(--color-primary);
+  text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5); /* Apply text shadow */
+  margin-bottom: var(--space-md);
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.client-item {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text-light); /* Light text color */
+  text-align: center;
+  padding: var(--space-sm);
+  margin: 0 var(--space-sm);
+  border-radius: var(--border-radius-sm); /* Rounded corners */
+  
+  transition: background-color 0.3s ease;
+}
+
+.client-item p {
+  margin: 0;
+}
+
+.client-item:hover {
+  background-color: var(--color-accent); /* Accent color on hover */
+  color: var(--color-background);
+  cursor: pointer;
+}
+
+/* Carousel arrows styling */
+.slick-prev, .slick-next {
+  color: var(--color-text-light);
+  font-size: var(--font-size-xl);
+  z-index: 1;
+}
+
+/* Hide the dots navigation */
+.slick-dots {
+  display: none;
+}
+
+
 /* ==================================
             Reviews
 =====================================*/
@@ -467,7 +521,6 @@
   font-weight: 600; /* Correct font-weight */
   text-align: center;
   color: var(--color-primary);
-  background-color: var(--color-background);
   text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5); /* Apply text shadow */
   margin-bottom: var(--space-lg); /* Proper spacing */
 }
@@ -648,10 +701,24 @@
 ==================================*/
 
 /* Category Section Styles */
+
+/* Hero Image */
+.hero-image {
+  width: 100%;
+  height: 1000px;
+  
+  object-fit: cover; /* Ensures the image covers the entire container */
+}
+
+/* Category Section Styles */
 .category-section {
-  padding-top: var(--space-xl); /* Equivalent to mt-24 in Tailwind */
-  background-color: var(--color-background); /* Use light gray background */
+  background-color: var(--color-background); /* Light gray background */
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align the content to the bottom */
+  height: 600px; /* Make the section take the full viewport height */
+  padding-bottom: 50px; /* Adds a 50px gap from the bottom */
 }
 
 /* Category Header Styles */
@@ -659,15 +726,15 @@
   font-size: 5rem; /* Equivalent to text-xl */
   font-weight: bold;
   text-transform: capitalize;
-  margin-top: var(--space-xl); /* Equivalent to mt-24 */
-  color: var(--color-primary); /* Set primary color for header */
+  color: rgb(17, 7, 7);
+  margin-top: 70px; /* Remove any top margin */
+  margin-bottom: var(--space-md); /* Space below the header */
 }
 
 /* Category Description Styles */
 .category-description {
   font-size: var(--font-size-xxl); /* Equivalent to text-xl */
-  margin-top: var(--space-md); /* Adjust if necessary */
-  color: var(--color-text); /* Light text color */
+  color: rgb(19, 18, 18) /* Light text color */
 }
 
 
@@ -722,8 +789,7 @@
 =================================*/
 
 .product-heading{
-  margin-top: 6s0px;
-  color: var(--color-primary);
+    color: var(--color-primary);
   text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5); /* Apply text shadow */
   max-width: 960px;
   margin-left: auto;
@@ -749,8 +815,8 @@
   border-radius: var(--border-radius-md); /* Using root variable for border radius */
   box-shadow: var(--box-shadow-light); /* Using root variable for light box shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: calc(50% - var(--space-md)); /* Make each card take up 50% width minus the gap */
-  max-width: 480px; /* Ensure cards do not exceed this width */
+  width: calc(33% - var(--space-md)); /* Make each card take up 50% width minus the gap */
+  max-width: 320px; /* Ensure cards do not exceed this width */
 }
 
 /* Hover effect on product card */
@@ -818,6 +884,24 @@
 }
 
 
+/* ====================================
+          Service & Spares
+=======================================*/
+
+.services{
+  background-color: var(--color-secondary); /* Light Gray Background */
+  padding: var(--space-sm); /* 32px padding */
+  color: var(--color-background);
+  border-radius: var(--border-radius-md); /* Medium border radius */
+  box-shadow: var(--box-shadow-medium); /* Medium box shadow */
+  max-width: 960px; /* Maximum width for dialog box */
+  margin: 0 auto; /* Center horizontally */
+  text-align: center;
+  font-size: var(--font-size-xxl);
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
 /* ===============================
     Dialouge box
 ===================================*/
@@ -852,6 +936,8 @@
 /* Form Group Styling */
 .dialog-form-group {
   margin-bottom: var(--space-sm); /* 16px bottom margin */
+  text-align: left;
+  width: 100%;
 }
 
 /* Form Label */
@@ -882,7 +968,7 @@
 
 /* Submit Button Styling */
 .dialog-submit-button {
-  width: 100%;
+  width: 50%;
   padding: var(--space-sm); /* 16px padding */
   background-color: var(--color-primary); /* Dark Blue background */
   color: white;
@@ -897,17 +983,159 @@
   background-color: var(--color-secondary); /* Light Orange on hover */
 }
 
-/* Dialog Footer */
-.dialog-footer {
-  margin-top: var(--space-lg); /* Large margin top */
-  font-size: var(--font-size-sm); /* 14px font size */
-  color: var(--color-text-light); /* Light text color */
+/* Dialog Form Layout */
+.dialog-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: var(--space-lg);
 }
 
-/* Footer Text */
-.footer-text {
+/* Left Half (Email Form) */
+.dialog-form-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* Right Half (Contact Details) */
+.dialog-form-right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  justify-content: flex-start; /* Align the content to the top */
+  text-align: left;
+}
+
+/* Contact Details Section */
+.contact-details {
+  padding: var(--space-md);
+  background-color: var(--color-light);
+  }
+
+.contact-details h3 {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary);
+  gap: var(--space-lg);
+}
+
+.contact-details h4 {
+  font-size: var(--font-size-md);
+  color: var(--color-text-dark);
+  gap: var(--space-lg);
+  line-height: var(--space-md);
+}
+
+
+/* =======================================
+      Contact Us
+==========================================*/
+
+/* Container for the entire contact section */
+.contact-container {
+  display: flex;
+  font-family: var(--font-primary), sans-serif;
+  background: var(--color-background);
+  padding: var(--space-sm);
+  height: 600px; /* Fixed height for the container */
+  justify-content: space-between;
+  align-items: stretch; /* Ensure both sides stretch equally */
+  padding-top: var(--space-lg); /* Added space to prevent overlap with fixed navbar */
+  max-width: 1080px; /* Set max-width */
+  margin: 0 auto; /* Center the container and evenly distribute empty space */
+}
+
+/* Left side personal information container */
+.contact-info-container {
+  width: 50%; /* Left side takes 50% of the container width */
+  padding: var(--space-sm);
+  background: var(--color-background);
+  line-height: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the content */
+  align-items: flex-start; /* Align the content to the left */
+  text-align: left; /* Align text to the left */
+  height: 100%; /* Ensure it takes the full height */
+}
+
+/* Right side contact form container */
+.contact-form-container {
+  width: 50%; /* Right side takes 50% of the container width */
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Evenly distribute space in the form */
+  background: #ffffff;
+  height: 400px; /* Ensure it takes the full height */
+}
+
+.contact-form-container h2 {
+  font-size: var(--font-size-xxl);
+  margin-bottom: var(--space-xs);
+  color: var(--color-primary);
   text-align: center;
-  margin-top: var(--space-xs); /* Small margin top */
+  z-index: 10; /* Ensure heading stays on top */
+  position: relative; /* Allow z-index to work */
+}
+
+/* Form and label styles */
+.contact-form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between; /* Spread the elements evenly */
+  height: 100%; /* Form should take up the full height */
+}
+
+.contact-form-container label {
+  font-size: var(--font-size-md);
+  margin-bottom: var(--space-xs); /* Reduced margin for compact form */
+  color: var(--color-text-light);
+  width: 100%; /* Ensure labels span the entire width */
+}
+
+/* Input and textarea fields */
+.contact-form-container input,
+.contact-form-container textarea {
+  font-size: var(--font-size-md);
+  padding: 10px;
+  margin-bottom: var(--space-sm); /* Reduced margin to minimize gaps */
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  width: 100%; /* Full width of the form container */
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.contact-form-container input:focus,
+.contact-form-container textarea:focus {
+  border-color: var(--color-accent);
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.contact-form-container textarea {
+  resize: none;
+  height: 100px;
+}
+
+/* Button styling */
+.contact-form-container button {
+  background: var(--color-primary);
+  color: white;
+  font-size: var(--font-size-md);
+  padding: var(--space-xs);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  width: 100%; /* Button spans the same width as inputs */
+  position: relative;
+  margin-bottom: -80px; /* Negative margin to overlap the footer */
+  z-index: 20; /* Ensure the button stays on top */
+}
+
+.contact-form-container button:hover {
+  background: var(--color-accent);
 }
 
 

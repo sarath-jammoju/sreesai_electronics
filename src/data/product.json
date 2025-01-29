@@ -10,8 +10,19 @@
     "color": "black",
     "rating": 4.5
     },
+    {
+      "id": 2,
+      "name": "CP-UNC-TG121ZL6-VM",
+      "category": "security",
+      "description": "1/1.7” 12MP PS CMOS Image Sensor (1.494 cm), Max. outputs 12MP(4000 × 3000)@25/30fps, Instastream/H.265/Smart H.264+/H.264 coding, Five streams for three-channel HD video",
+      "price": 7373,
+      "oldPrice": 10099,
+      "image": "https://www.cpplusworld.com/prodassets/product/small/f818b7dd-6dda-4098-87f1-df07950975af.png",
+      "color": "white",
+      "rating": 4.0
+    },
   {
-    "id": 2,
+    "id": 3,
     "name": " ZKTeco Biometric Fingerprint Attendance Device",
     "category": "security",
     "description": "ZKTeco Biometric Fingerprint Attendance Device, Attendance Machine for Office with 2.8 inch TFT Screen, USB Download Data, No Monthly Fees - LX15",
@@ -22,7 +33,7 @@
     "rating": 4.0
   },
   {
-    "id": 3,
+    "id": 4,
     "name": " Smart Digital Door Lock ",
     "category": "security",
     "description": "LAVNA Smart Digital Door Lock with 7 Ways Access WiFi Unlock, Fingerprint, Card, PIN, OTP, Mobile App and Manual Key Access for Wooden Doors | (Video Door Bell Integration) (WiFi + Bluetooth)",
@@ -32,7 +43,17 @@
     "rating": 4.7
   },
   {
-    "id": 4,
+    "id": 5,
+    "name": " Smart Digital Door Lock ",
+    "category": "security",
+    "description": "HVGA Display (0.9071 centimeters), Support 1000 Face Recognition, Support 10000 Fingerprints, Support 200000 Storage Capacity, Support USB 2.0",
+    "price":"6,990.00",
+    "image": "https://www.cpplusworld.com/prodassets/product/small/d7451232-8261-4891-8b36-9f6f970bd1e0.jpg",
+    "color": "gold",
+    "rating": 4.7
+  },
+  {
+    "id": 6,
     "name": "Video Door Phone",
     "category": "security",
     "description": "HIKVISION Analog Video Door Phone/Bell with 7 TFT LCD Screen Wired| 1080p Resolution | BuiltIn Mic & Loudspeaker",
@@ -42,7 +63,7 @@
     "rating": 4.2
   },
   {
-    "id": 5,
+    "id": 7,
     "name": "Beetel M59 Caller Id Corded Landline Phone",
     "category": "communication",
     "description": "Beetel M59 Caller Id Corded Landline Phone With 16 Digit Lcd Display & Adjustable Contrast,10 One Touch Memory Buttons,2Ways Speaker Phone,Music On Hold,Solid Build Quality,Classic Design (Black)(M59)",
@@ -53,7 +74,7 @@
     "rating": 4.3
   },
   {
-    "id": 6,
+    "id": 8,
     "name": "DIGIMORE Voice Amplifier for Teachers with Bluetooth",
     "category": "communication",
     "description": "DIGIMORE Voice Amplifier for Teachers with Bluetooth | 8 Hrs Battery | Wired Headset Mic with 10W Speaker for Tour Guides,Yoga,Classroom Teaching Aid for Schools & Colleges (D-1200)",
@@ -63,7 +84,16 @@
     "rating": 4.4
   },
   {
-    "id": 7,
+   
+    "id": 9,
+    "name": "Samsung Pa System ",
+    "category": "communication",
+    "description": "Samsung Public Adress System",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaCrZMFFxn74WeFuKIX1QtkiibmzduBnwnRw&s"
+ 
+},
+  {
+    "id": 10,
     "name": "TCL 139 cm (55 inches) Metallic Bezel-Less Series 4K Ultra HD Smart LED Google TV 55V6B (Black)",
     "category": "displays",
     "description": "TCL 139 cm (55 inches) Metallic Bezel-Less Series 4K Ultra HD Smart LED Google TV 55V6B (Black)",
@@ -74,7 +104,7 @@
     "rating": 4.8
   },
   {
-    "id": 8,
+    "id": 11,
     "name": "Foundation",
     "category": "cosmetics",
     "description": "High-coverage foundation for a flawless finish.",
@@ -84,7 +114,7 @@
     "rating": 4.1
   },
   {
-    "id": 9,
+    "id": 12,
     "name": "Sunglasses",
     "category": "accessories",
     "description": "Trendy sunglasses with UV protection.",
@@ -94,7 +124,7 @@
     "rating": 4.6
   },
   {
-    "id": 10,
+    "id": 13,
     "name": "Casual Pants",
     "category": "dress",
     "description": "Comfortable maxi dress for casual outings.",
@@ -103,5 +133,201 @@
     "image": "https://images.unsplash.com/photo-1708523842501-1619478cea1f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "color": "green",
     "rating": 4.2
-  }
+  },
+  {
+    "id": 13,
+    "name": "HP 15s, 12th Gen Intel Core i3-1215U",
+    "category": "computers",
+    "description": "HP 15s, 12th Gen Intel Core i3-1215U, 8GB DDR4, 512GB SSD, (Win 11, Office 21, Silver, 1.69kg) Anti-glare, Micro-edge, 15.6-inch(39.6cm) FHD laptop, Intel UHD Graphics, HD camera, Backlit KB, fq5327tu.",
+    "image": "https://m.media-amazon.com/images/I/71bRz-UEILL._SX679_.jpg"
+   
+ 
+  },
+  {
+    "id": 14,
+    "name": "HDell 15 Thin & Light Laptop",
+    "category": "computers",
+    "description": "Dell 15 Thin & Light Laptop, Intel Core i5-1235U Processor/16GB DDR4 + 512GB SSD/Intel UHD Graphics/15.6 (39.62cm) FHD Display/Win 11 + MSO'21/15 Month McAfee/Carbon Black/Spill Resistant KB/1.69kg",
+    "image": "https://m.media-amazon.com/images/I/61-Y-eWXqtL._SX679_.jpg"
+   
+  },
+ 
+  {
+    "id": 15,
+    "name": "Acer Nitro V Gaming Laptop",
+    "category": "computers",
+    "description": "Acer Nitro V Gaming Laptop 13th Gen Intel Core i5-13420H with RTX 4050 Graphics 6GB VRAM, 144Hz Display (16GB DDR5/1TB SSD/Windows 11 Home/Wi-Fi 6),15.6(39.6cms) FHD ANV15-51",
+    "image": "https://m.media-amazon.com/images/I/51GGNToj7aL._SX679_.jpg"
+   
+   
+  },
+  {
+    "id": 16,
+    "name": "HP All-in-One PC",
+    "category": "computers",
+    "description": "HP All-in-One PC, Windows 11 Home, Intel Processor N200, 21.45-Inch (54.5 Cm), FHD, Intel UHD Graphics, 720P HD Camera W/Privacy Shutter, Dual Speakers (Win 11, White, 4.17 Kg), Dg0154In",
+    "image": "https://m.media-amazon.com/images/I/61wt6u4yXEL._SX679_.jpg"
+  },
+  {
+    "id": 17,
+    "name": "ASUS A3402 All-in-One Desktop",
+    "category": "computers",
+    "description": "ASUS A3402 All-in-One Desktop, 23.8 FHD (1920 x 1080), Intel Core i3-1315U (8GB RAM/512GB SSD/Windows 11/Office Home/with Wireless White Keyboard & Mouse//White/5.4 Kg), A3402WVA-WPC002WS",
+    "image": "https://m.media-amazon.com/images/I/71ULmnaIhpL._SX679_.jpg"
+  },
+  {
+    "id": 18,
+    "name": "custom Desktop",
+    "category": "computers",
+    "description": "Nividia Gaming Desktop",
+    "image": "https://5.imimg.com/data5/RO/RA/JE/SELLER-3866941/gaming-desktop-pc.jpg"
+  },
+  {
+    "id": 19,
+    "name": "HP Smart Tank 529 AIO Colour Printer",
+    "category": "computers",
+    "description": "Epson Ecotank L3252 Wi-Fi All-in-One Ink Tank Wireless Color LED Printers (Black)",
+    "image": "https://m.media-amazon.com/images/I/512f8pCW7vL._SX679_.jpg"
+ 
+  },
+  {
+    "id": 20,
+    "name": "Epson Ecotank L3252",
+    "category": "computers",
+    "description": "HP Smart Tank 529 AIO Colour Printer (Upto 6000 Black & 6000 Colour Pages Included in The Box)- Print, Scan & Copy for Office/Home",
+    "image": "https://m.media-amazon.com/images/I/71FDAbUf9VL._AC_UY327_FMwebp_QL65_.jpg"
+ 
+  },
+  {
+    "id": 21,
+    "name": "Canon PIXMA MegaTank G2770",
+    "category": "computers",
+    "description": "Canon PIXMA MegaTank G2770 All-in-one Inktank Colour Printer with 1 Year Additional Warranty on Product Registration",
+    "image": "https://m.media-amazon.com/images/I/61qV8ZHYz2L._SX679_.jpg"
+  },
+  {
+    "id": 22,
+    "name": "canon Zerox machine",
+    "category": "computers",
+    "description": "Canon Zerox machine all in one",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1h2NjdCRXzx_BZPYWKnUvcAQWE2BNc2ToeQ&s"
+ 
+  },
+  {
+    "id": 23,
+    "name": "Acessories",
+    "category": "computers",
+    "description": "Accessories all in one",
+    "image": "https://www.silicon.co.ke/cdn/shop/articles/be4e5ed0381ed56be50c77bdaeb9c8cd.png?v=1692630895"
+  },
+  {
+    "id": 24,
+    "name": "Desktop Acessories",
+    "category": "computers",
+    "description": "Desktop Accessories all in one",
+    "image": "https://www.mydevicecatalog.com/wp-content/uploads/2023/05/Computer-Accessories-PNG.png"
+  },
+  {
+   
+    "id": 21,
+    "name": "Home Theaters ",
+    "category": "Solutions",
+    "description": "2.1Ch Surround Sound Home Theatre",
+    "image": "https://m.media-amazon.com/images/I/713hhC62R8L._SY450_.jpg"
+ 
+},
+{
+   
+  "id": 22,
+  "name": "Virtual Reality ",
+  "category": "Solutions",
+  "description": "Canon’s latest HMD is the MREAL X",
+  "image": "https://global.canon/en/technology/cutting-edge/mr2019/img/mr2019_img1.jpg"
+
+},
+{
+   
+  "id": 23,
+  "name": "Digital Signage ",
+  "category": "Solutions",
+  "description": "Canon REALiS, LX and LV-Series projector",
+  "image": "https://lookbeyond.online/hs-fs/hubfs/digital%20signage%20in%20corporate%20and%20office%20%20(1).jpeg?width=1024&height=683&name=digital%20signage%20in%20corporate%20and%20office%20%20(1).jpeg"
+
+},
+{
+  "id": 24,
+  "name": "Home Automation ",
+  "category": "Solutions",
+  "description": "Samsung SmartThings Hub",
+  "image": "https://image-us.samsung.com/SamsungUS/pim/migration/smart-home/smartthings/hubs/f-h-eth-001/Pdpdefault-f-h-eth-001-600x600-C1-052016.jpg?$product-details-jpg$"
+
+},
+{
+  "id": 25,
+  "name": "Video Conference ",
+  "category": "Solutions",
+  "description": "ProConnect Video Conference System or 4K resolution and HD video quality",
+  "image": "https://framerusercontent.com/images/2Bp77u5zHvCpsmnFUOaBHAtEXU.jpg"
+},
+{
+  "id": 26,
+  "name": "Audio Conference ",
+  "category": "Solutions",
+  "description": "Conference microphoneConference Microphone USB Speakerphone Microphone for Business Conference,360°Conference Microphone USB Speakerphone Microphone for Business Conference,360°",
+  "image": "https://m.media-amazon.com/images/I/41DjTz1RO-L._SY450_.jpg"
+
+},
+{
+   
+  "id": 27,
+  "name": " 65 Inch Digital Standee",
+  "category": "displays",
+  "description": "Samsung Public Adress System",
+  "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/331062336/SH/VQ/UM/67623515/65-inch-digital-standee-1000x1000.jpg"
+
+}
+,
+{
+"id": 28,
+"name": "Led wall ",
+"category": "displays",
+"description": "Led wall  HD Ready Smart LED TV 32LM563BPTC (Dark Iron Gray)",
+"image": "https://images.samsung.com/is/image/samsung/assets/us/business/displays/lcd-videowalls/explore/122321/LED-Video-Walls_CO23_TEXT-OVER-COLUMN.jpg?$600_258_JPG$"
+
+}
+,
+{
+
+  "id": 29,
+  "name": " Lg Interactive Panel ",
+  "category": "displays",
+  "description": "Lg Interactive White Digital Board, Size: 65 Inch, Power Consumption: 150 - 220 W",
+  "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/336162808/DX/LY/YE/116227888/65-interactive-white-digital-board.jpeg"
+
+
+},
+{
+  "id": 30,
+  "name": "samsung Led  wall",
+  "category": "displays",
+  "description": "Samsung Led Wall(55 inches) Metallic Bezel-Less Series 4K Ultra HD Smart LED Google TV 55V6B (Black)",
+  "price": 299.99,
+  "oldPrice": 349.99,
+  "image":"https://www.lg.com/us/images/business/md07515002/gallery/N01_medium01.jpg",
+  "color": "silver",
+  "rating": 4.8
+},
+{
+  "id": 31,
+  "name": "samsung Led  wall",
+  "category": "displays",
+  "description": "Samsung Led Wall(55 inches) Metallic Bezel-Less Series 4K Ultra HD Smart LED Google TV 55V6B (Black)",
+  "price": 299.99,
+  "oldPrice": 349.99,
+  "image":"https://www.lg.com/us/images/business/md07515002/gallery/N01_medium01.jpg",
+  "color": "silver",
+  "rating": 4.8
+}
+
+
 ]

@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { v4 as uuidv4 } from 'uuid';
 
-import asus_logo from '../assets/asus_logo.png';
+import asus_logo from '../assets/asus_logo.jpg'
 import brother_logo from '../assets/brother_logo.png';
 import canon_logo from '../assets/canon_logo.png';
 import cp_logo from '../assets/cp_logo.jpg';
@@ -14,7 +14,11 @@ import hikvision_logo from '../assets/hikvision_logo.png';
 import hp_logo from '../assets/hp_logo.png';
 import lenovo_logo from '../assets/lenovo_logo.png';
 import lg_logo from '../assets/lg_logo.png';
-
+import Honeywell_Logo from '../assets/honeywell-Logo.png'
+import dahua_logo from '../assets/dahua_logo.jpg'
+import acer_logo from '../assets/acer_logo.jpg'
+import zebronics_logo from '../assets/zebronics_logo.jpg'
+import samsung_logo from '../assets/samsung_logo.jpg'
 
 const Carousel = () => {
   const settings = {
@@ -30,7 +34,7 @@ const Carousel = () => {
 
   const partnerLogos = [
     asus_logo, brother_logo, canon_logo, cp_logo, dell,
-    epson_logo, hikvision_logo, hp_logo, lenovo_logo, lg_logo
+    epson_logo, hikvision_logo, hp_logo, lenovo_logo, lg_logo, Honeywell_Logo, dahua_logo, acer_logo, samsung_logo, zebronics_logo
   ];
 
   return (
