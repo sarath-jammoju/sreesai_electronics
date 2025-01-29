@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <ToastContainer />
       <Routes>
-        <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home />} />
         <Route path="/categories/:categoryname" element={<CategoryPage />} />
         <Route path="/contact-us" element={<ContactForm />} />
       </Routes>
