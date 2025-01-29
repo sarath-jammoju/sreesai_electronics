@@ -59,14 +59,12 @@ const CategoryPage = () => {
         backgroundImage: `url(${categoryImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        height: '400px',  // Adjust as needed
+        height: '600px',  // Adjust as needed
+        
     } : {};
 
     
-    console.log(categoryDescription);
-    
-    
-    return (
+   return (
         <>
             <section className="category-section" style={backgroundStyle}>
                 <h2 className="category-header">{categoryname || "Category"}</h2>

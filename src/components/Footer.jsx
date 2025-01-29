@@ -12,7 +12,7 @@ const Footer = () => {
           <h4>Contact Info</h4>
           
           <p>
-          Building, 13, Green Color, 3, Arundelpet, Guntur, Andhra Pradesh 522002
+          2/7, Brodipet, Near Sivalayam, Guntur - 522002
           </p>
           <p>            
             info@sreesaielectronics.in
@@ -46,7 +46,7 @@ const Footer = () => {
           <a href="#">Computers</a>
         </div>
         <div className="footer-bar">
-          <p className="footer-text">© 2025 Sanjit Tech Solutions Pvt Ltd | All rights reserved.</p>
+          <p className="footer-text">© 2025 Sree Sai Electronics All rights reserved</p>
         </div>
         
       </footer>
