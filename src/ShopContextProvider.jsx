@@ -12,6 +12,7 @@ const ShopContextProvider = ({ children }) => {
   return (
     <shopContext.Provider value={{ productData, setProducts }}>
       {children}
+      {/* comment */}
     </shopContext.Provider>
   );
 };
