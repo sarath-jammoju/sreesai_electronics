@@ -1,0 +1,946 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*==============================
+         css reset 
+=================================*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*==============================
+         Root Variables
+=================================*/
+:root {
+  /* Fonts */
+  --font-primary: 'Open Sans', sans-serif;
+  --font-secondary: 'Poppins', sans-serif;
+  --font-tertiary: 'Roboto', sans-serif;
+
+  /* Colors */
+  --color-primary: #1f3a64; /* Dark Blue */
+  --color-secondary: #f4a261; /* Light Orange */
+  --color-accent: #e76f51; /* Red-Orange */
+  --color-background: #fafafa; /* Light Gray Background */
+  --color-text-light: #666666; /* Light Text */
+  --color-text-light: #666666; /* Light Text */
+  --color-border: #ddd; /* Border Color */
+ 
+
+  
+  /* Spacing (margins, paddings) */
+  --space-xs: 0.5rem; /* 8px */
+  --space-sm: 1rem; /* 16px */
+  --space-md: 1.5rem; /* 24px */
+  --space-lg: 2rem; /* 32px */
+  --space-xl: 3rem; /* 48px */
+
+  /* Font Sizes */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-md: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.5rem; /* 24px */
+  --font-size-xxl: 2rem; /* 32px */
+
+  /* Border Radius */
+  --border-radius-sm: 0.25rem; /* 4px */
+  --border-radius-md: 0.5rem; /* 8px */
+  --border-radius-lg: 1rem; /* 16px */
+
+  /* Box Shadows */
+  --box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --box-shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --box-shadow-heavy: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+  /* Z-Index */
+  --z-index-base: 1;
+}
+
+
+/*==============================
+         Navbar Styling
+=================================*/
+
+/* General styles for the navbar container */
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-background); /* Use the background color variable */
+  box-shadow: var(--box-shadow-light); /* Use the light box-shadow variable */
+  z-index: var(--z-index-base); /* Use the base z-index */
+  padding: var(--space-sm) var(--space-lg); /* Use space variables for padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.logo-section {
+  flex: 1;
+  text-align: left;
+  width: 33%;
+}
+
+.logo-text {
+  font-size: var(--font-size-xl); /* Use font-size variable */
+  font-weight: bold;
+  color: var(--color-primary); /* Use primary color */
+  text-decoration: none;
+  font-family: var(--font-secondary); /* Use secondary font */
+}
+
+.logo-highlight {
+  color: var(--color-secondary); /* Use secondary color */
+}
+
+/* Middle Section (empty) */
+.middle-section {
+  flex: 1;
+  width: 33%;
+  text-align: center;
+}
+
+/* Navigation links section */
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 33%;
+  list-style: none;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  font-size: var(--font-size-md); /* Use font-size variable */
+  font-family: var(--font-primary); /* Use primary font */
+  font-weight: 500;
+  color: var(--color-text); /* Use text color */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding: var(--space-xs) var(--space-sm); /* Use space variables for padding */
+}
+
+.nav-link:hover {
+  color: var(--color-accent); /* Use accent color */
+  transform: translateY(-2px);
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  background-color: var(--color-background); /* Use background color */
+  box-shadow: var(--box-shadow-medium); /* Use medium box-shadow */
+  border-radius: var(--border-radius-md); /* Use medium border-radius */
+  padding: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm); /* Use space variable */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s ease 0.3s;
+  list-style-type: none;
+}
+
+.nav-item:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Dropdown Item Styles */
+.dropdown-item {
+  padding: var(--space-xs);
+  font-size: var(--font-size-md); /* Use font-size variable */
+  color: var(--color-text); /* Use text color */
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  width: 100%; /* Make the item take up the full width of the dropdown */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.dropdown-item:hover {
+  background-color: var(--color-accent); /* Use accent color */
+  color: white;
+  width: 100%; /* Ensure it takes full width */
+}
+
+/*==============================
+         Hero Section Styling
+=================================*/
+.HeroSection {
+  position: relative;
+  width: 100%;
+  height: auto; /* Subtract the navbar height from the viewport height */
+  overflow: hidden;
+  padding-top: var(--space-lg); /* Use space variable for padding-top to avoid overlapping with navbar */
+}
+
+.HeroSection img {
+  width: 100%; /* Ensure the image takes full width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Make sure the image covers the entire container without distorting */
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensure image stays behind other elements */
+}
+
+
+
+/* =========================================
+         Partner Logo Scrolling
+============================================*/
+
+.section-header {
+  margin-top: var(--space-lg);
+  font-size: var(--font-size-xxl);
+  font-weight: bold;
+  padding: var(--space-xs);
+  margin-bottom: var(--space-lg);
+  color: var(--color-primary);
+  background-color: var(--color-background);
+  text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5); /* Apply text shadow */
+  
+}
+
+.slick-slider {
+  display: flex;
+  justify-content: center;
+}
+
+.slick-track {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center; /* Center logos */
+}
+
+.carousel-item {
+  display: inline-block;
+  margin-right: var(--space-lg);
+  background-color: #ffffff; /* Background color for logos */
+  padding: var(--space-sm);
+  border-radius: var(--border-radius-sm); /* Rounded corners for the logos container */
+  box-shadow: var(--box-shadow-light);
+}
+
+.carousel-logo {
+  max-height: 45px; /* Adjust logo size */
+  object-fit: contain;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Smooth scrolling animation */
+.slick-slide {
+  display: flex;
+  align-items: center;
+}
+
+/* Hide navigation arrows */
+.slick-prev, .slick-next {
+  display: none !important;
+}
+
+.slick-dots {
+  display: none !important;
+}
+
+/*==============================
+         Categories Section
+=================================*/
+
+.categories-section {
+  margin-top: var(--space-xl); /* Adjusted for spacing */
+  padding: var(--space-lg) 0; /* Add top and bottom padding */
+  text-align: center; /* Center the text */
+  max-width: 1084px; /* Set max-width */
+  margin-left: auto; /* Center the section horizontally */
+  margin-right: auto; /* Center the section horizontally */
+}
+
+.products-header{
+  margin-top: var(--space-lg);
+  font-size: var(--font-size-xxl);
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  background-color: #fafafa;
+  margin-bottom: var(--space-lg); 
+  color: var(--color-primary);
+  background-color: var(--color-background);
+  text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5); /* Apply text shadow */
+}
+
+
+.products-header {
+  font-size: var(--font-size-xxl); /* Font size */
+  font-weight: bold; /* Make the text bold */
+  color: var(--color-primary); /* Text color */
+  margin-bottom: var(--space-lg); /* Add space below the heading */
+}
+
+/* Container for all category cards */
+.categories-container {
+  display: flex;
+  justify-content: center; /* Center the cards horizontally */
+  flex-wrap: nowrap; /* Prevent cards from wrapping to the next line */
+  gap: var(--space-lg); /* Space between each card */
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+  padding: 0 var(--space-sm); /* Adjusted padding */
+  width: 100%; /* Ensure it takes the full width of the parent container */
+}
+
+/* Category Card Styling */
+.category-card {
+  background-color: #ffffff;
+  box-shadow: var(--box-shadow-light);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  width: 200px; /* Set fixed width for the card */
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+/* Category Card Image */
+.category-image-container {
+  position: relative;
+  height: 150px; /* Set a fixed height for the image container */
+  overflow: hidden;
+}
+
+.category-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay for the images */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* Dark overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Category Name and Text */
+.category-details {
+  padding: var(--space-sm);
+}
+
+.category-name {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+/* Hover effect for cards */
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.category-card:hover .overlay {
+  opacity: 1; /* Show the overlay on hover */
+}
+
+/* =======================================
+          Why Choose Us
+==========================================*/
+
+.why-choose-us-container {  
+  max-width: 1084px; /* Set max-width */
+  margin: 0 auto; /* Center the section evenly */
+  padding: var(--space-md) var(--space-md); /* Using space variables */
+  text-align: center;
+  font-family: var(--font-secondary);
+}
+
+.why-choose-us-container h2 {
+  font-size: var(--font-size-xxl); 
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: var(--color-background);
+  text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5); /* Apply text shadow */
+  margin-bottom: var(--space-xl); 
+  font-family: var(--font-secondary);
+}
+
+.why-choose-us-content {
+  display: flex; /* Use flexbox for full-width layout */
+  justify-content: space-between; /* Evenly distribute cards */
+  align-items: stretch; /* Ensure all cards have equal height */
+  max-width: 1084px; /* Set max-width */
+  margin-left: auto; /* Center the section horizontally */
+  margin-right: auto; /* Center the section horizontally */
+  gap: var(--space-sm); /* Add spacing between cards */
+}
+
+.why-item {
+  flex: 1; /* Each card takes equal width */
+  border: 0.0625rem solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-md);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  max-width: 1084px; /* Ensure 4 cards fit in a row */
+  margin-left: auto; /* Center the section horizontally */
+  margin-right: auto; /* Center the section horizontally */
+  text-align: center;
+}
+
+.why-item:hover {
+  box-shadow: var(--box-shadow-medium);
+  transform: translateY(-5px);
+}
+
+.why-item h3 {
+  font-size: var(--font-size-md); 
+  color: var(--color-primary);
+  margin: var(--space-md) 0 var(--space-xs);
+  font-family: var(--font-secondary);
+}
+
+.why-item p {
+  font-size: var(--font-size-sm); 
+  color: var(--color-text);
+  line-height: 1.4;
+  font-family: var(--font-tertiary);
+}
+
+.why-item svg {
+  color: var(--color-secondary);
+  font-size: 1.8rem; /* Reduced icon size */
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* ==================================
+            Reviews
+=====================================*/
+
+/* General container */
+
+.reviews-slider-container{
+  padding-top: 50px;
+  max-width: 1084px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slider-container {
+  font-family: var(--font-tertiary); /* Use Roboto for body text */
+  margin: 0 auto;
+  padding: var(--space-md); /* Adjusted padding */
+  max-width: 75rem; /* Maximum width of the slider */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heading style */
+.reviews-header {
+  font-size: var(--font-size-xxl); /* Heading should be XXL */
+  font-weight: 600; /* Correct font-weight */
+  text-align: center;
+  color: var(--color-primary);
+  background-color: var(--color-background);
+  text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5); /* Apply text shadow */
+  margin-bottom: var(--space-lg); /* Proper spacing */
+}
+
+/* Slider styles */
+.slick-slider {
+  position: relative;
+  display: block;
+  width: 100%; /* Ensure slider takes full container width */
+}
+
+.slick-track {
+  display: flex; /* Flex container to hold the slides */
+  align-items: flex-start; /* Align slides to the top */
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
+}
+
+/* Review card inside slider */
+.review-card {
+  background-color: var(--color-background);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-md);
+  margin: var(--space-sm);
+  box-shadow: var(--box-shadow-light);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: center;
+  width: 20rem; /* Adjusted card width */
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.review-card:hover {
+  transform: translateY(-5px); /* Slight hover effect */
+}
+
+/* Profile image style - round and fixed size */
+.review-image {
+  width: 6rem;  /* Adjusted image size */
+  height: 6rem; 
+  border-radius: 50%; /* Makes the image round */
+  object-fit: cover; /* Ensures image covers the area without distortion */
+  margin-bottom: var(--space-sm);
+}
+
+/* Slider navigation buttons */
+.slick-prev,
+.slick-next {
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+  z-index: 1;
+  transition: color 0.3s ease-in-out;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  color: var(--color-primary); /* Change color on hover */
+}
+
+
+/* ==================================
+          Google Map
+=====================================*/
+
+/* Google Map container style */
+.google-map-container {
+  margin-top: 50px;
+  width: 100%;  /* Full width */
+  max-width: 100%;  /* Make sure it doesn't exceed the container width */
+  height: 500px;  /* Set a fixed height */
+  overflow: hidden; /* Hide any overflow */
+  position: relative;
+}
+
+/* Google Map iframe style */
+.google-map-iframe {
+  width: 100%;  /* Fill container width */
+  height: 100%;  /* Fill container height */
+  border: 0;  /* Remove border */
+}
+
+
+/* ==================================
+              Footer 
+=====================================*/
+/* Footer container */
+.footer-container {
+  
+  background-color: #F5F5F5; /* Light background color */
+  color: #333333; /* Dark gray text color */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four equal-width columns */
+  gap: var(--space-md); /* Use root variable for spacing */
+  padding: var(--space-lg) var(--space-md); /* Root padding */
+
+}
+
+/* Footer column styling */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 80px;
+}
+
+.footer-column h4 {
+  font-size: var(--font-size-lg); /* Heading size using root */
+  font-weight: 600;
+  margin-bottom: var(--space-md); /* Spacing */
+  color: var(--color-primary); /* Primary color for headings */
+}
+
+.footer-column a {
+  font-size: var(--font-size-md);
+  color: #333333; /* Dark gray text for links */
+  text-decoration: none;
+  margin-bottom: var(--space-sm); /* Space between links */
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: var(--color-secondary); /* Change color on hover */
+}
+
+.footer-column p {
+  font-size: var(--font-size-md);
+  margin-bottom: var(--space-sm);
+  color: #666666; /* Medium gray for paragraph text */
+}
+
+.footer-column .icon {
+  margin-right: var(--space-xs);
+  font-size: var(--font-size-lg); /* Icon size */
+}
+
+/* Footer bar (bottom section) */
+.footer-bar {
+  grid-column: span 4; /* Span all columns */
+  text-align: center;
+  margin-top: var(--space-lg);
+  font-size: var(--font-size-sm);
+  color: #333333; /* Dark gray footer text */
+  background-color: #ffffff; /* Light background */
+  padding: var(--space-sm) 0;
+}
+
+/* Instagram images section (if required) */
+.footer-column img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-md);
+  margin-top: var(--space-xs);
+}
+
+/* Footer text */
+.footer-text {
+  font-size: var(--font-size-sm);
+  color: #333333; /* Dark gray text color */
+}
+
+
+
+
+
+/* ================================================================================================================================ */
+
+/* ===============================
+        Security Hero Section
+==================================*/
+
+/* Category Section Styles */
+.category-section {
+  padding-top: var(--space-xl); /* Equivalent to mt-24 in Tailwind */
+  background-color: var(--color-background); /* Use light gray background */
+  text-align: center;
+}
+
+/* Category Header Styles */
+.category-header {  
+  font-size: 5rem; /* Equivalent to text-xl */
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-top: var(--space-xl); /* Equivalent to mt-24 */
+  color: var(--color-primary); /* Set primary color for header */
+}
+
+/* Category Description Styles */
+.category-description {
+  font-size: var(--font-size-xxl); /* Equivalent to text-xl */
+  margin-top: var(--space-md); /* Adjust if necessary */
+  color: var(--color-text); /* Light text color */
+}
+
+
+/*==============================
+    Carousel Styles
+=================================*/
+
+/* Container for the carousel */
+.carousel-container {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 2rem;
+  max-width: 1020px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header for the carousel section */
+.carousel-header {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5); /* Apply text shadow */
+  margin-bottom: 1.5rem;
+}
+
+/* Individual carousel item (logo) */
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Logo styling inside carousel */
+.carousel-logo {
+  max-width: 100%;
+  max-height: 80px; /* Adjust height for logos */
+  object-fit: contain; /* Ensures the logos maintain their aspect ratio */
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect on logos */
+.carousel-logo:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+
+
+/*==============================
+         Product Cards Grid
+=================================*/
+
+.product-heading{
+  margin-top: 6s0px;
+  color: var(--color-primary);
+  text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5); /* Apply text shadow */
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: var(--font-size-xxl);
+}
+
+
+.product-cards-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of items */
+  gap: var(--space-lg); /* Space between the product cards */
+  padding: var(--space-lg); /* Padding around the grid */
+  justify-content: space-between; /* Distribute space evenly */
+  max-width: 1024px; /* Limit the maximum width */
+  margin: 0 auto; /* Center the grid */
+}
+
+/* Individual product card container */
+.product-card {
+  background-color: white;
+  border-radius: var(--border-radius-md); /* Using root variable for border radius */
+  box-shadow: var(--box-shadow-light); /* Using root variable for light box shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: calc(50% - var(--space-md)); /* Make each card take up 50% width minus the gap */
+  max-width: 480px; /* Ensure cards do not exceed this width */
+}
+
+/* Hover effect on product card */
+.product-card:hover {
+  transform: translateY(-10px); /* Slight lift effect */
+  box-shadow: var(--box-shadow-medium); /* Enhanced shadow on hover */
+}
+
+/* Container for image and content inside the card */
+.product-card-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Container for the product image */
+.product-image-container {
+  display: flex;
+  justify-content: center;  /* Centers the image horizontally */
+  align-items: center;      /* Centers the image vertically */
+  overflow: hidden;
+  border-radius: var(--border-radius-md) var(--border-radius-md) 0 0; /* Rounded top corners */
+  width: 100%;
+  height: 200px; /* Adjust the height as per your design */
+}
+
+/* Image styling */
+.product-image {
+  width: 200px;      /* Fixed width for the image */
+  height: 200px;     /* Fixed height for the image */
+  object-fit: cover; /* Ensures the image covers the container without distorting */
+  transition: transform 0.3s ease;
+}
+/* Hover effect on product image */
+.product-image:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Content box for product name and description */
+.product-info {
+  padding: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+/* Product name styling */
+.product-name {
+  font-size: var(--font-size-lg);
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+/* Product description styling */
+.product-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  line-height: 1.4; /* Add line-height for better readability */
+  overflow: hidden; /* Ensure the description stays within bounds */
+  text-overflow: ellipsis; /* Add ellipsis for long text */
+}
+
+
+/* ===============================
+    Dialouge box
+===================================*/
+
+/* Dialog Box Container */
+.dialog-box-container {
+  background-color: var(--color-background); /* Light Gray Background */
+  padding: var(--space-lg); /* 32px padding */
+  border-radius: var(--border-radius-md); /* Medium border radius */
+  box-shadow: var(--box-shadow-medium); /* Medium box shadow */
+  max-width: 960px; /* Maximum width for dialog box */
+  margin: 0 auto; /* Center horizontally */
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+/* Dialog Box Header */
+.dialog-box-header {
+  font-size: var(--font-size-xxl); /* 32px font size */
+  font-weight: bold;
+  color: var(--color-primary); /* Dark Blue color */
+  margin-bottom: var(--space-md); /* Margin bottom */
+}
+
+/* Dialog Box Description */
+.dialog-box-description {
+  font-size: var(--font-size-md); /* 16px font size */
+  color: var(--color-text-light); /* Light text color */
+  margin-bottom: var(--space-lg); /* Large margin bottom */
+}
+
+/* Form Group Styling */
+.dialog-form-group {
+  margin-bottom: var(--space-sm); /* 16px bottom margin */
+}
+
+/* Form Label */
+.dialog-form-label {
+  font-size: var(--font-size-md); /* 16px font size */
+  color: var(--color-text-dark); /* Dark text color */
+  display: block;
+  margin-bottom: var(--space-xs); /* Small margin below label */
+}
+
+/* Form Input Styling */
+.dialog-form-input {
+  width: 100%;
+  padding: var(--space-sm); /* 16px padding */
+  font-size: var(--font-size-md); /* 16px font size */
+  border: 1px solid var(--color-border); /* Light border */
+  border-radius: var(--border-radius-sm); /* Small border radius */
+  margin-bottom: var(--space-sm); /* Small margin below input */
+  color: var(--color-text-dark); /* Dark text color */
+}
+
+/* Error Message */
+.dialog-error-message {
+  color: var(--color-accent); /* Red-Orange color for error */
+  font-size: var(--font-size-sm); /* 14px font size */
+  margin-top: var(--space-xs); /* Small margin top */
+}
+
+/* Submit Button Styling */
+.dialog-submit-button {
+  width: 100%;
+  padding: var(--space-sm); /* 16px padding */
+  background-color: var(--color-primary); /* Dark Blue background */
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md); /* Medium border radius */
+  font-size: var(--font-size-md); /* 16px font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dialog-submit-button:hover {
+  background-color: var(--color-secondary); /* Light Orange on hover */
+}
+
+/* Dialog Footer */
+.dialog-footer {
+  margin-top: var(--space-lg); /* Large margin top */
+  font-size: var(--font-size-sm); /* 14px font size */
+  color: var(--color-text-light); /* Light text color */
+}
+
+/* Footer Text */
+.footer-text {
+  text-align: center;
+  margin-top: var(--space-xs); /* Small margin top */
+}
+
+
+
+/* ============================================
+          Media Queries
+=================================================*/
+/* Mobile devices (max-width: 576px) */
+@media (max-width: 576px) { 
+  /* Add your styles for mobile devices here */
+}
+
+/* Small tablets (min-width: 577px and max-width: 768px) */
+@media (min-width: 577px) and (max-width: 768px) { 
+  /* Add your styles for small tablets here */
+}
+
+/* Medium tablets (min-width: 769px and max-width: 992px) */
+@media (min-width: 769px) and (max-width: 992px) { 
+  /* Add your styles for medium tablets here */
+}
+
+/* Large tablets or small desktops (min-width: 993px and max-width: 1200px) */
+@media (min-width: 993px) and (max-width: 1200px) { 
+  /* Add your styles for large tablets or small desktops here */
+}
+
+/* Desktops (min-width: 1201px and max-width: 1400px) */
+@media (min-width: 1201px) and (max-width: 1400px) { 
+  /* Add your styles for desktops here */
+}
+
+/* Large desktops or TVs (min-width: 1401px and up) */
+@media (min-width: 1401px) { 
+  /* Add your styles for large desktops or TV screens here */
+}

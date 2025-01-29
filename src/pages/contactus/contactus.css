@@ -1,0 +1,93 @@
+.contact-container {
+    display: flex;
+    font-family: "Arial", sans-serif;
+    background: #f9f9f9;
+  }
+   
+  /* Left side image container */
+  .contact-image-container {
+    width: 45%; /* Image container takes 45% of the width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+   
+  .contact-image-container img {
+    width: 100%; /* Full width of the image container */
+    height: 100%; /* Full height of the image container */
+    object-fit: cover; /* Ensure the image covers the entire container */
+    border-radius: 0; /* No rounded corners */
+  }
+   
+  /* Right side form container */
+  .contact-form-container {
+    width: 55%; /* Form container takes 55% of the width */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #ffffff;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); /* Subtle shadow on the left */
+  }
+   
+  .contact-form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    text-align: center;
+  }
+   
+  /* Form and label styles */
+  .contact-form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+  }
+   
+  .contact-form-container label {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #34495e;
+    width: 100%; /* Ensure labels span the entire width */
+  }
+   
+  /* Input and textarea fields */
+  .contact-form-container input,
+  .contact-form-container textarea {
+    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    width: 100%; /* Full width of the form container */
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; /* Include padding in the width calculation */
+  }
+   
+  .contact-form-container input:focus,
+  .contact-form-container textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+  }
+   
+  .contact-form-container textarea {
+    resize: none;
+    height: 100px;
+  }
+   
+  /* Button styling */
+  .contact-form-container button {
+    background: #2980b9;
+    color: white;
+    font-size: 1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Button spans the same width as inputs */
+  }
+   
+  .contact-form-container button:hover {
+    background: #3498db;
+  }

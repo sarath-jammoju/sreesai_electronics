@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "name": "DS-2CD2347G3-LIS2UY/S(L)(RB)",
+    "category": "security",
+    "description": "HikAI-ISP for excellent noise reduction effect, 24/7 colorful imaging via ColorVu technology, Focus on Person and Vehicle classification based on deep learning. ",
+    "price": 495.00,
+    "oldPrice": 699.99,
+    "image": "https://m.media-amazon.com/images/I/51EPNWpz8ZL._SX679_.jpg",
+    "color": "black",
+    "rating": 4.5
+    },
+  {
+    "id": 2,
+    "name": " ZKTeco Biometric Fingerprint Attendance Device",
+    "category": "security",
+    "description": "ZKTeco Biometric Fingerprint Attendance Device, Attendance Machine for Office with 2.8 inch TFT Screen, USB Download Data, No Monthly Fees - LX15",
+    "price": 7373,
+    "oldPrice": 10099,
+    "image": "https://i.pinimg.com/736x/c1/10/1d/c1101d0037597b8f3371e86f000a73d5.jpg",
+    "color": "red",
+    "rating": 4.0
+  },
+  {
+    "id": 3,
+    "name": " Smart Digital Door Lock ",
+    "category": "security",
+    "description": "LAVNA Smart Digital Door Lock with 7 Ways Access WiFi Unlock, Fingerprint, Card, PIN, OTP, Mobile App and Manual Key Access for Wooden Doors | (Video Door Bell Integration) (WiFi + Bluetooth)",
+    "price":"6,990.00",
+    "image": "https://m.media-amazon.com/images/I/31wndRWefsL._SX300_SY300_QL70_FMwebp_.jpg",
+    "color": "gold",
+    "rating": 4.7
+  },
+  {
+    "id": 4,
+    "name": "Video Door Phone",
+    "category": "security",
+    "description": "HIKVISION Analog Video Door Phone/Bell with 7 TFT LCD Screen Wired| 1080p Resolution | BuiltIn Mic & Loudspeaker",
+    "price":" ₹499",
+    "image": "https://m.media-amazon.com/images/I/51K4+3ywVSL._SX679_.jpg",
+    "color": "red",
+    "rating": 4.2
+  },
+  {
+    "id": 5,
+    "name": "Beetel M59 Caller Id Corded Landline Phone",
+    "category": "communication",
+    "description": "Beetel M59 Caller Id Corded Landline Phone With 16 Digit Lcd Display & Adjustable Contrast,10 One Touch Memory Buttons,2Ways Speaker Phone,Music On Hold,Solid Build Quality,Classic Design (Black)(M59)",
+    "price": " ₹1,269",
+    "oldPrice":"₹2,000",
+    "image": "https://m.media-amazon.com/images/I/512gKPwN5ML._SX679_.jpg",
+    "color": "blue",
+    "rating": 4.3
+  },
+  {
+    "id": 6,
+    "name": "DIGIMORE Voice Amplifier for Teachers with Bluetooth",
+    "category": "communication",
+    "description": "DIGIMORE Voice Amplifier for Teachers with Bluetooth | 8 Hrs Battery | Wired Headset Mic with 10W Speaker for Tour Guides,Yoga,Classroom Teaching Aid for Schools & Colleges (D-1200)",
+    "price": 89.99,
+    "image": "https://m.media-amazon.com/images/I/71P69U8YltL._SX679_.jpg",
+    "color": "black",
+    "rating": 4.4
+  },
+  {
+    "id": 7,
+    "name": "TCL 139 cm (55 inches) Metallic Bezel-Less Series 4K Ultra HD Smart LED Google TV 55V6B (Black)",
+    "category": "displays",
+    "description": "TCL 139 cm (55 inches) Metallic Bezel-Less Series 4K Ultra HD Smart LED Google TV 55V6B (Black)",
+    "price": 299.99,
+    "oldPrice": 349.99,
+    "image":"https://m.media-amazon.com/images/I/71N7mwf1C7L._SX679_.jpg",
+    "color": "silver",
+    "rating": 4.8
+  },
+  {
+    "id": 8,
+    "name": "Foundation",
+    "category": "cosmetics",
+    "description": "High-coverage foundation for a flawless finish.",
+    "price": 39.99,
+    "image": "https://images.unsplash.com/photo-1599733589046-10c005739ef9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "color": "beige",
+    "rating": 4.1
+  },
+  {
+    "id": 9,
+    "name": "Sunglasses",
+    "category": "accessories",
+    "description": "Trendy sunglasses with UV protection.",
+    "price": 49.99,
+    "image": "https://images.unsplash.com/photo-1577803645773-f96470509666?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3VuJTIwZ2xhc3Nlc3xlbnwwfHwwfHx8MA%3D%3D",
+    "color": "black",
+    "rating": 4.6
+  },
+  {
+    "id": 10,
+    "name": "Casual Pants",
+    "category": "dress",
+    "description": "Comfortable maxi dress for casual outings.",
+    "price": 59.99,
+    "oldPrice": 79.99,
+    "image": "https://images.unsplash.com/photo-1708523842501-1619478cea1f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "color": "green",
+    "rating": 4.2
+  }
+]

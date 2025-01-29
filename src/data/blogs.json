@@ -1,0 +1,31 @@
+[
+    {
+      "id": 1,
+      "title": "Canon EF 24-70mm f/2.8L II USM Lens",
+      "subtitle": "New York Times",
+      "date": "12th August 2022",
+      "imageUrl": "https://images.squarespace-cdn.com/content/v1/579bbd35b3db2bfbd63eb3ae/8ccd1f33-fe54-4825-98fe-c915efcfee87/canon5dmarkivreview-3.jpg?format=1500w"
+    },
+    {
+      "id": 2,
+      "title": "Keyless Confidence Digital Lock Door",
+      "subtitle": "Ndtv ",
+      "date": "18th January 2023",
+      "imageUrl": "https://c.ndtvimg.com/2024-06/hks2pml_smart-door_625x300_12_June_24.jpg?im=FaceCrop,algorithm=dnn,width=260,height=195"
+    },
+    {
+      "id": 3,
+      "title": "Got Lucky Enough to Buy a PS5 or Xbox Series X? Here Are The Best 4K 120Hz TVs for Your Consoles, In Photo",
+      "subtitle": "News 18",
+      "date": "5th January 2025",
+      "imageUrl": "https://images.news18.com/ibnlive/uploads/2021/05/1620730971_featured-image-2021-05-11t163140.743.jpg?impolicy=website&width=219&height=147"
+    },
+    {
+        "id": 4,
+        "title": "The World's Best Fashion Fair 2025",
+        "subtitle": "New York Times",
+        "date": "25th May 2025",
+        "imageUrl": "https://plus.unsplash.com/premium_photo-1713720663924-4e3fe8f20f79?q=80&w=1948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      }
+  ]
+  
