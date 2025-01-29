@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import category1 from "../../src/assets/category-1.jpg";
 import category2 from "../../src/assets/category-2.jpg";
-import category3 from "../../src/assets/category-3.jpg";
+import category3 from '../../src/assets/category-3.jpg'
 import category4 from "../../src/assets/category-4.png";
 import category5 from '../../src/assets/computers.jpg';
+
 
 const Categories = () => {
     const categories = [
