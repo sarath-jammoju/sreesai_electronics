@@ -1045,7 +1045,6 @@
 .contact-container {
   display: flex;
   font-family: var(--font-primary), sans-serif;
-  background: var(--color-background);
   padding: var(--space-sm);
   height: 600px; /* Fixed height for the container */
   justify-content: space-between;
@@ -1059,7 +1058,6 @@
 .contact-info-container {
   width: 50%; /* Left side takes 50% of the container width */
   padding: var(--space-sm);
-  background: var(--color-background);
   line-height: var(--space-lg);
   display: flex;
   flex-direction: column;

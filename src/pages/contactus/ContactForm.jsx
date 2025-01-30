@@ -35,7 +35,7 @@ const ContactForm = () => {
     <div className="contact-container">
       {/* Left half - Personal Information */}
       <div className="contact-info-container">
-        <h2>Contact Information</h2>
+        <h2>Get in touch with us!</h2>
         <p>
           <strong>Email:</strong> <br />
           info@sreesaielectronics.co.in
@@ -47,8 +47,7 @@ const ContactForm = () => {
         </p>
         <p>
           <strong>Address:</strong> <br />
-          Building, 13, Green Color, 3, Arundelpet, Guntur, 
-          Andhra Pradesh 522002
+          2/7, Brodipet, Near Sivalayam, Guntur - 522002
         </p>
         <p>
           <strong>Business Hours:</strong> <br />
@@ -58,7 +57,7 @@ const ContactForm = () => {
 
       {/* Right half - Contact Form */}
       <div className="contact-form-container">
-        <h2>Contact Us</h2>
+        <h2>Get a mail from us</h2>
         <form onSubmit={handleSubmit}>
           <label>
             Name:

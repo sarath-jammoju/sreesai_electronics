@@ -80,7 +80,7 @@ const ProductsCards = ({ products }) => {
         <div className="dialog-form-left">
           <div className="dialog-form-group">
             <label htmlFor="email" className="dialog-form-label">
-              Enter your email:
+            Get a mail from us:
             </label>
             <input
               type="email"
@@ -97,9 +97,9 @@ const ProductsCards = ({ products }) => {
         <div className="dialog-form-right">
           <div className="contact-details">
             <h3>Contact Details</h3>
-            <h4>Email: contact@yourelectronics.com</h4>
-            <h4>Phone: +123 456 7890</h4>
-            <h4>Address: 123 Electronics St, Tech City</h4>
+            <h4>Email: info@sreesaielectronics.co.in</h4>
+            <h4>Phone: +91 7569299875</h4>
+            <h4>Address: 2/7, Brodipet, Near Sivalayam, Guntur - 522002</h4>
           </div>
         </div>
 

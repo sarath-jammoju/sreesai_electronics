@@ -39,7 +39,7 @@ const Carousel = () => {
 
   return (
     <div className="slider-container">
-      <h2 className="section-header">Our Affiliate Dealers</h2>
+      <h2 className="section-header">Brands We Deal With</h2>
       <Slider {...settings}>
         {partnerLogos.map((logo, index) => (
           <div key={uuidv4()} className="carousel-item">
