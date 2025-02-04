@@ -1,0 +1,1283 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*==============================
+         css reset 
+=================================*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*==============================
+         Root Variables
+=================================*/
+:root {
+  /* Fonts */
+  --font-primary: 'Open Sans', sans-serif;
+  --font-secondary: 'Poppins', sans-serif;
+  --font-tertiary: 'Roboto', sans-serif;
+
+  /* Colors */
+  --color-primary: #1f3a64; /* Dark Blue */
+  --color-secondary: #f4a261; /* Light Orange */
+  --color-accent: #e76f51; /* Red-Orange */
+  --color-background: #fafafa; /* Light Gray Background */
+  --color-text-light: #666666; /* Light Text */
+  --color-text-light: #666666; /* Light Text */
+  --color-border: #ddd; /* Border Color */
+ 
+
+  
+  /* Spacing (margins, paddings) */
+  --space-xs: 0.5rem; /* 8px */
+  --space-sm: 1rem; /* 16px */
+  --space-md: 1.5rem; /* 24px */
+  --space-lg: 2rem; /* 32px */
+  --space-xl: 3rem; /* 48px */
+
+  /* Font Sizes */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-md: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.5rem; /* 24px */
+  --font-size-xxl: 2rem; /* 32px */
+
+  /* Border Radius */
+  --border-radius-sm: 0.25rem; /* 4px */
+  --border-radius-md: 0.5rem; /* 8px */
+  --border-radius-lg: 1rem; /* 16px */
+
+  /* Box Shadows */
+  --box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --box-shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --box-shadow-heavy: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+  /* Z-Index */
+  --z-index-base: 1;
+}
+
+
+/*==============================
+         Navbar Styling
+=================================*/
+
+/* General styles for the navbar container */
+/* Fix Navbar Overlapping with Hero Section */
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-background);
+  box-shadow: var(--box-shadow-light);
+  z-index: 1001; /* Ensure navbar is above other elements */
+  padding: var(--space-sm) var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px; /* Explicitly define height */
+  margin-bottom: 20px; /* Add bottom margin to navbar */
+}
+
+/* Ensure Hero Section Starts Below Navbar */
+.hero-section {
+  margin-top: 120px; /* Push hero section down */
+}
+
+/* Other sections, if any, adjust accordingly */
+.section {
+  margin-top: var(--space-lg); /* Add spacing for content below navbar */
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  height: var(--space-xl); /* Increase height */
+  background-color: var(--color-background);
+}
+
+.logo-section {
+  flex: 1;
+  text-align: left;
+  width: 33%;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--color-primary); /* Use primary color */
+  text-decoration: none;
+  font-family: var(--font-secondary); /* Use secondary font */
+}
+
+.logo-highlight {
+  color: var(--color-secondary); /* Use secondary color */
+}
+
+/* Middle Section (empty) */
+.middle-section {
+  flex: 1;
+  width: 33%;
+  text-align: center;
+}
+
+/* Navigation links section */
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  gap:10px;
+  list-style: none;
+  position: relative; /* Add relative positioning */
+}
+
+.nav-item {
+  position: relative; /* Ensure proper dropdown positioning */
+}
+
+.nav-link {
+  font-size: var(--font-size-lg); /* Use font-size variable */
+  font-family: var(--font-primary); /* Use primary font */
+  font-weight: 400;
+  color: var(--color-text); /* Use text color */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  border: none;
+}
+
+.nav-link:hover {
+  color: var(--color-accent); /* Use accent color */
+  transform: translateY(-2px);
+}
+/* Dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-background);
+  box-shadow: var(--box-shadow-light);
+  list-style: none;
+  padding: var(--space-md);
+  z-index: 1002;
+  border-radius: var(--border-radius-xxl);
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  min-width: 180px;
+}
+
+/* Display dropdown on hover */
+.nav-item:hover .dropdown-menu {
+  display: block;
+  gap: 15px;
+}
+
+/* Dropdown item styles */
+.dropdown-item {
+  display: block;
+  padding: 12px 15px;
+  margin: 5px 0;
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: var(--border-radius-sm);
+}
+
+.dropdown-item:hover {
+  background-color: var(--color-accent);
+  color: var(--color-background);
+  transform: translateX(5px);
+}
+.dropdown-toggle {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  cursor: pointer;
+  padding: 12px 15px;
+}
+
+.dropdown-toggle:focus {
+  outline: none;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) { /* Tablets */
+  .dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) { /* Small Tablets & Large Phones */
+  .dropdown-menu {
+    left: 30px;
+    right: 0;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) { /* Mobile Phones */
+  .dropdown-menu {
+    width: 100%;
+    left:-40px;
+    transform: none;
+  }
+}
+
+
+/* Burger Menu */
+/* .burger-menu {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: none;
+} */
+
+
+/*==============================
+         Navbar Responsiveness
+=================================*/
+
+/* Small screens (Phones, including iPhones and Google Pixel) */
+@media only screen and (max-width:900px) {
+
+  /* .burger-menu {
+    display: block;
+  }
+
+   */
+  .navbar-container {
+    flex-direction: row;
+    height: auto;
+    padding: var(--space-md);
+    margin-bottom: 20px; /* Ensure enough space below the navbar */
+  }
+ .logo-section
+ {
+  margin-left: 4px;
+ }
+  .navbar-content {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+  }
+
+  /* Navigation Links */
+  .nav-links {
+    display: flex; /* Ensure the nav items are visible */
+    flex-direction: row; /* Stack  the nav items vertically */
+    text-align: center;/* Adjust spacing between items */
+    padding: 0;
+    margin-top: var(--space-md); /* Add space between navbar and links */
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: end;
+  }
+
+  .nav-link {
+    font-size:10px;
+    font-family: var(--font-primary);
+    font-weight: 400;
+    color: var(--color-text);
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--color-accent);
+    transform: translateY(-2px);
+  }
+}
+
+/* Medium screens (Tablets including iPad Pro Max) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .navbar-container {
+    padding: var(--space-md);
+    margin-bottom: 20px; /* Ensure enough space below the navbar */
+  }
+
+  .nav-links {
+    flex-direction: row; /* Keep navbar links in row on tablet */
+  }
+}
+
+/* Large screens (Desktops and larger tablets) */
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  .navbar-container {
+    padding: var(--space-lg);
+    margin-bottom: 20px; /* Ensure enough space below the navbar */
+  }
+
+  .nav-links {
+    justify-content: space-between; /* Distribute items evenly */
+  }
+  
+}
+
+/* Extra large screens (Larger Desktops) */
+@media only screen and (min-width: 1441px) {
+  .navbar-container {
+    padding: var(--space-xl);
+    margin-bottom: 20px; /* Ensure enough space below the navbar */
+
+  }
+
+  .nav-links {
+    justify-content: space-between; /* Distribute items evenly */
+    
+  }
+}
+
+
+
+/*==============================
+         Hero Section Styling
+=================================*/
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.hero-banner img {
+  width: 100%; /* Ensure the image takes full width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Make sure the image covers the entire container without distorting */
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensure image stays behind other elements */
+}
+
+/*==============================
+         Hero Section Responsiveness
+=================================*/
+
+
+
+/* =========================================
+         Partner Logo Scrolling
+============================================*/
+
+.section-header {
+  margin-top: var(--space-lg);
+  font-size: var(--font-size-xxl);
+  font-weight: bold;
+  padding: var(--space-xs);
+  margin-bottom: var(--space-lg);
+  color: var(--color-primary);
+   text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5); /* Apply text shadow */
+  
+}
+
+.slick-slider {
+  display: flex;
+  justify-content: center;
+}
+
+.slick-track {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center; /* Center logos */
+}
+
+.carousel-item {
+  display: inline-block;
+  margin-right: var(--space-lg);
+ padding: var(--space-sm);
+  border-radius: var(--border-radius-sm); /* Rounded corners for the logos container */
+  box-shadow: var(--box-shadow-light);
+}
+
+.carousel-logo {
+  max-height: 45px; /* Adjust logo size */
+  object-fit: contain;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Smooth scrolling animation */
+.slick-slide {
+  display: flex;
+  align-items: center;
+}
+
+/* Hide navigation arrows */
+.slick-prev, .slick-next {
+  display: none !important;
+}
+
+.slick-dots {
+  display: none !important;
+}
+
+
+
+/*==============================
+         Product Section
+=================================*/
+
+.categories-section {
+  margin-top: var(--space-md); /* Adjusted for spacing */
+  padding: var(--space-lg) 0; /* Add top and bottom padding */
+  text-align: center; /* Center the text */
+  max-width: 1120px; /* Set max-width */
+  margin-left: auto; /* Center the section horizontally */
+  margin-right: auto; /* Center the section horizontally */
+}
+
+.products-header{
+  margin-top: var(--space-lg);
+  font-size: var(--font-size-xxl);
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  margin-bottom: var(--space-lg); 
+  color: var(--color-primary);
+  text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5); /* Apply text shadow */
+}
+
+
+.products-header {
+  font-size: var(--font-size-xxl); /* Font size */
+  font-weight: bold; /* Make the text bold */
+  color: var(--color-primary); /* Text color */
+  margin-bottom: var(--space-lg); /* Add space below the heading */
+}
+
+/* Container for all category cards */
+.categories-container {
+  display: flex;
+  justify-content: center; /* Center the cards horizontally */
+  flex-wrap: nowrap; /* Prevent cards from wrapping to the next line */
+  gap: var(--space-lg); /* Space between each card */
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+  padding: 0 var(--space-sm); /* Adjusted padding */
+  width: 100%; /* Ensure it takes the full width of the parent container */
+}
+
+/* Category Card Styling */
+.category-card {
+  background-color: #ffffff;
+  box-shadow: var(--box-shadow-light);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  width: 200px; /* Set fixed width for the card */
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+/* Category Card Image */
+.category-image-container {
+  position: relative;
+  height: 150px; /* Set a fixed height for the image container */
+  overflow: hidden;
+}
+
+.category-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay for the images */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* Dark overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Category Name and Text */
+.category-details {
+  padding: var(--space-sm);
+  
+}
+
+.category-name {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+.category-description{
+  margin-top: 20px;
+  color: black;
+  text-align: start;
+}
+
+/* Hover effect for cards */
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.category-card:hover .overlay {
+  opacity: 1; /* Show the overlay on hover */
+}
+@media only screen and (max-width:768px)
+{
+  
+  .carousel-logo {
+   /* Adjust logo size */
+    height:50px;
+  }
+  
+
+}
+  
+
+
+/* ==================================================
+         Media Queries for Product Section
+===================================================== */
+/* Small screens (Phones, including iPhones and Google Pixel) */
+@media only screen and (max-width: 768px) {
+  .products-header {
+    font-size: var(--font-size-xl); /* Reduced font size */
+    margin-top: var(--space-md);
+    text-align: center; /* Ensure text is centered */
+  }
+
+  /* Adjust container width for small screens */
+  .categories-container {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 16px; /* Maintain spacing */
+    padding: 0 20px; /* Reduce padding for smaller screens */
+    margin: auto; /* Center align */
+    width: 100%; /* Full width */
+    max-width: 100%; /* Prevent overflow */
+  }
+
+  .categories-section {
+    margin: 0 auto; /* Remove unnecessary negative margins */
+    padding: 0 var(--space-sm); /* Adjust padding */
+  }
+
+  .category-card {
+    margin-bottom: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto; /* Allow height to adjust */
+    width: 100%; /* Make it flexible */
+    max-width: 320px; /* Prevent cards from getting too large */
+    margin: auto; /* Center align */
+  }
+
+  .category-image-container img {
+    width: 100%; /* Ensure image takes full card width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure images cover the area */
+  }
+
+  .category-name {
+    font-size: var(--font-size-lg); /* Adjust font size */
+  }
+
+  .category-description {
+    font-size: var(--font-size-xs); /* Adjust font size */
+  }
+}
+
+
+
+/* Medium screens (Tablets including iPad Pro Max) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .products-header {
+    font-size: var(--font-size-xl); /* Adjusted font size for tablets */
+  }
+
+  .categories-container {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 image cards */
+    gap: 13px /* Larger gap between cards */
+  }
+
+  .category-image-container img {
+    width: 100%; /* Ensure image takes full card width */
+    height: 350px; /* Adjust height for better visuals */
+    object-fit: cover; /* Ensure images cover the area */
+  }
+
+  .category-name {
+    font-size: var(--font-size-lg); /* Slightly reduced font size */
+  }
+
+  .category-description {
+    font-size: var(--font-size-sm); /* Adjust font size */
+  }
+}
+
+/* Large screens (Desktops and larger tablets) */
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  .products-header {
+    font-size: var(--font-size-xxl); /* Large font size for headings */
+  }
+
+  .categories-container {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(4, 1fr); /* 4 image cards */
+    gap: 13px /* Larger gap between cards */
+  }
+
+  .category-image-container img {
+    width: 100%; /* Ensure image takes full card width */
+    height: 250px; /* Adjusted image height */
+    object-fit: cover; /* Ensure images cover the area */
+  }
+
+  .category-name {
+    font-size: var(--font-size-xl); /* Larger font size */
+  }
+
+  .category-description {
+    font-size: var(--font-size-md); /* Larger font size for description */
+  }
+}
+
+/* Extra large screens (Larger Desktops) */
+@media only screen and (min-width: 1441px) {
+  .products-header {
+    font-size: var(--font-size-xxl); /* Extra large font size */
+  }
+
+  .categories-container {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(5, 1fr); /* 5 image cards */
+    gap: 13px /* Larger gap between cards */
+  }
+
+  .category-image-container img {
+    width: 100%; /* Ensure image takes full card width */
+    height: 300px; /* Larger image height for big screens */
+    object-fit: cover; /* Ensure images cover the area */
+  }
+
+  .category-name {
+    font-size: var(--font-size-xxl); /* Larger font size for titles */
+  }
+
+  .category-description {
+    font-size: var(--font-size-lg); /* Larger font size for descriptions */
+  }
+}
+
+
+
+
+
+/* =======================================
+          Why Choose Us
+==========================================*/
+
+.why-choose-us-container {  
+  max-width: 1120px; /* Set max-width */
+  margin: 0 auto; /* Center the section evenly */
+  padding: var(--space-md) var(--space-md); /* Using space variables */
+  text-align: center;
+  font-family: var(--font-secondary);
+}
+
+.why-choose-us-container h2 {
+  font-size: var(--font-size-xxl); 
+  font-weight: 600;
+  color: var(--color-primary);
+   text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5); /* Apply text shadow */
+  margin-bottom: var(--space-xl); 
+  font-family: var(--font-secondary);
+}
+
+.why-choose-us-content {
+  display: flex; /* Use flexbox for full-width layout */
+  justify-content: space-between; /* Evenly distribute cards */
+  align-items: stretch; /* Ensure all cards have equal height */
+  max-width: 1120px; /* Set max-width */
+  margin-left: auto; /* Center the section horizontally */
+  margin-right: auto; /* Center the section horizontally */
+  gap: var(--space-sm); /* Add spacing between cards */
+}
+
+.why-item {
+  flex: 1; /* Each card takes equal width */
+  border: 0.0625rem solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-md);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  max-width: 1120px; /* Ensure 4 cards fit in a row */
+  margin-left: auto; /* Center the section horizontally */
+  margin-right: auto; /* Center the section horizontally */
+  text-align: center;
+}
+
+.why-item:hover {
+  box-shadow: var(--box-shadow-medium);
+  transform: translateY(-5px);
+}
+
+.why-item h3 {
+  font-size: var(--font-size-md); 
+  color: var(--color-primary);
+  margin: var(--space-md) 0 var(--space-xs);
+  font-family: var(--font-secondary);
+}
+
+.why-item p {
+  font-size: var(--font-size-sm); 
+  text-align: start;
+  color: black;
+  line-height: 1.4;
+  font-family: var(--font-tertiary);
+}
+
+.why-item svg {
+  color: var(--color-secondary);
+  font-size: 1.8rem; /* Reduced icon size */
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* ==================================================
+         Media Queries for Why Choose Us Section
+===================================================== */
+/* Small screens (Phones, including iPhones and Google Pixel) */
+@media only screen and (max-width: 767px) {
+  .why-choose-us-container h2 {
+    font-size: var(--font-size-lg); /* Adjust font size */
+    margin-top: var(--space-md); /* Adjust spacing */
+    text-align: center; /* Ensure heading is centered */
+  }
+
+  .why-choose-us-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 16px; /* Adjust spacing for balance */
+    padding: 0 15px; /* Reduce padding for smaller screens */
+    width: 100%; /* Full width */
+    max-width: 100%; /* Prevent horizontal scrolling */
+    margin: auto; /* Center align */
+  }
+
+  .why-item {
+    padding: var(--space-sm); /* Adjust padding for better spacing */
+    height: auto; /* Allow height to adjust dynamically */
+    width: 100%; /* Make it flexible */
+    max-width: 320px; /* Prevent items from being too large */
+    margin: auto; /* Center each item */
+    text-align: center; /* Center content */
+  }
+
+  .why-item h3 {
+    font-size: var(--font-size-md); /* Adjust font size for heading */
+  }
+
+  .why-item p {
+    font-size: var(--font-size-sm); /* Adjust font size for description */
+  }
+}
+
+/* Medium screens (Tablets including iPad Pro Max) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .why-choose-us-container h2 {
+    font-size: var(--font-size-xl); /* Adjust font size for tablets */
+  }
+
+  .why-choose-us-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    gap: 13px /* Larger gap between items */
+  }
+
+  .why-item h3 {
+    font-size: var(--font-size-lg); /* Slightly larger heading font */
+  }
+
+  .why-item p {
+    font-size: var(--font-size-sm); /* Adjust font size for description */
+  }
+}
+
+/* Large screens (Desktops and larger tablets) */
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  .why-choose-us-container h2 {
+    font-size: var(--font-size-xxl); /* Larger font size for larger screens */
+  }
+
+  .why-choose-us-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 items per row */
+    gap: 13px /* Larger gap between items */
+  }
+
+  .why-item h3 {
+    font-size: var(--font-size-xl); /* Larger heading font */
+  }
+
+  .why-item p {
+    font-size: var(--font-size-md); /* Larger font size for description */
+  }
+}
+
+/* Extra large screens (Larger Desktops) */
+@media only screen and (min-width: 1441px) {
+  .why-choose-us-container h2 {
+    font-size: var(--font-size-xxl); /* Extra large font size for large screens */
+  }
+
+  .why-choose-us-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+    gap: 13px /* Larger gap between items */
+  }
+
+  .why-item h3 {
+    font-size: var(--font-size-xxl); /* Larger heading font */
+  }
+
+  .why-item p {
+    font-size: var(--font-size-md); /* Larger font size for descriptions */
+  }
+}
+
+
+/* =====================================
+        Clients
+=========================================*/
+
+.clients-container {
+  padding: var(--space-lg);
+  text-align: center;
+  color: white; /* Text color */
+  max-width: 1120px;
+  margin: 0 auto; /* Center the container */
+}
+
+.clients-header {
+  color: var(--color-primary);
+  text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5); /* Apply text shadow */
+  margin-bottom: var(--space-md);
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.client-item {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-light); /* Light text color */
+  text-align: center;
+  border-radius: var(--border-radius-sm); /* Rounded corners */
+  width: 100%;
+  
+  transition: background-color 0.3s ease;
+}
+
+.client-item p {
+  margin: 0;
+}
+
+.client-item:hover {
+
+  color: var(--color-accent);
+  cursor: pointer;
+}
+
+/* Carousel arrows styling */
+.slick-prev, .slick-next {
+  color: var(--color-text-light);
+  font-size: var(--font-size-xl);
+  z-index: 1;
+}
+
+/* Hide the dots navigation */
+.slick-dots {
+  display: none;
+}
+
+/* ==================================================
+         Media Queries for Clients Section
+===================================================== */
+
+/* Small screens (Phones, including iPhones and Google Pixel) */
+@media only screen and (max-width: 767px) {
+  .clients-header {
+    font-size: var(--font-size-lg); /* Adjust font size for small screens */
+    margin-top: var(--space-md); /* Adjust the top margin */
+  }
+
+  .clients-content {
+    display: grid;
+    grid-template-columns: 1fr; /* Stack items on small screens */
+    gap: 13px; /* Smaller gap between items */
+  }
+
+  .client-item {
+    padding: var(--space-xs); /* Smaller padding */
+  }
+
+  .client-item p {
+    font-size: var(--font-size-xs); /* Adjust font size for description */
+  }
+}
+
+/* Medium screens (Tablets including iPad Pro Max) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .clients-header {
+    font-size: var(--font-size-xl); /* Adjust font size for tablets */
+  }
+
+  .clients-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    gap: 13px; /* Larger gap between items */
+  }
+
+  .client-item p {
+    font-size: var(--font-size-sm); /* Adjust font size for description */
+  }
+}
+
+/* Large screens (Desktops and larger tablets) */
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  .clients-header {
+    font-size: var(--font-size-xxl); /* Larger font size for larger screens */
+  }
+
+  .clients-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    gap: 13px; /* Larger gap between items */
+  }
+
+  .client-item p {
+    font-size: var(--font-size-md); /* Larger font size for description */
+  }
+}
+
+/* Extra large screens (Larger Desktops) */
+@media only screen and (min-width: 1441px) {
+  .clients-header {
+    font-size: var(--font-size-xxl); /* Extra large font size for large screens */
+  }
+
+  .clients-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+    gap: 13px; /* Larger gap between items */
+  }
+
+  .client-item p {
+    font-size: var(--font-size-lg); /* Larger font size for descriptions */
+  }
+}
+
+
+/* ==================================
+            Reviews
+=====================================*/
+
+/* General container */
+
+.reviews-slider-container{
+  padding-top: 50px;
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slider-container {
+  font-family: var(--font-tertiary); /* Use Roboto for body text */
+  margin: 0 auto;
+  padding: var(--space-md); /* Adjusted padding */
+  max-width: 75rem; /* Maximum width of the slider */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heading style */
+.reviews-header {
+  font-size: var(--font-size-xxl); /* Heading should be XXL */
+  font-weight: 600; /* Correct font-weight */
+  text-align: center;
+  color: var(--color-primary);
+  text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5); /* Apply text shadow */
+  margin-bottom: var(--space-lg); /* Proper spacing */
+}
+
+/* Slider styles */
+.slick-slider {
+  position: relative;
+  display: block;
+  width: 100%; /* Ensure slider takes full container width */
+}
+
+.slick-track {
+  display: flex; /* Flex container to hold the slides */
+  align-items: flex-start; /* Align slides to the top */
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
+}
+
+/* Review card inside slider */
+.review-card {
+  background-color: var(--color-background);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-md);
+  margin: var(--space-sm);
+  box-shadow: var(--box-shadow-light);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: center;
+  width: 20rem; /* Adjusted card width */
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.review-card:hover {
+  transform: translateY(-5px); /* Slight hover effect */
+}
+
+/* Profile image style - round and fixed size */
+.review-image {
+  width: 6rem;  /* Adjusted image size */
+  height: 6rem; 
+  border-radius: 50%; /* Makes the image round */
+  object-fit: cover; /* Ensures image covers the area without distortion */
+  margin-bottom: var(--space-sm);
+}
+
+/* Slider navigation buttons */
+.slick-prev,
+.slick-next {
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+  z-index: 1;
+  transition: color 0.3s ease-in-out;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  color: var(--color-primary); /* Change color on hover */
+}
+
+
+
+
+/* =============================
+          Foooter
+================================*/
+/* ==================================
+          Google Map & Footer Container
+=====================================*/
+
+/* Container for the Google Map and Footer */
+.map-footer-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow for wrapping on smaller screens */
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-lg);
+  height: 200px;
+}
+
+/* Google Map styling (taking 50% width) */
+.google-map-container {
+  flex: 1 1 50%; /* Take 50% width of the container */
+  position: relative;
+  height: 300px; /* Set a fixed height */
+  max-width: 100%;
+  
+}
+
+/* Make the iframe responsive inside the map container */
+.google-map-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height:400px;
+  border: 0;
+}
+
+/* Footer Section styling (taking 50% width) */
+.footer-container {
+  flex: 1 1 50%; /* Take 50% width of the container */
+  background-color: #F5F5F5;
+  color: #333333;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md); /* Reduced padding for smaller footer height */
+  min-height: 100px; /* Set a minimum height to reduce the footer height */
+}
+
+/* Footer column styling */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 80px;
+}
+
+.footer-column h4 {
+  font-size: 24px;
+  font-weight: 600;
+  margin:var(--space-md)0;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.footer-column a {
+  font-size: var(--font-size-md);
+  color: #333333;
+  text-decoration: none;
+  margin-bottom: var(--space-sm);
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+.footer-column a:hover {
+  color: var(--color-secondary);
+}
+
+.footer-column p {
+  font-size: var(--font-size-md);
+  margin-bottom: var(--space-sm);
+  color: #666666;
+}
+
+.footer-column .icon {
+  margin-right: var(--space-xs);
+  font-size: var(--font-size-lg);
+}
+
+/* Footer bar (bottom section) */
+.footer-bar {
+  grid-column: span 4;
+  text-align: center;
+  margin-top: var(--space-lg);
+  font-size: var(--font-size-sm);
+  color: #333333;
+  background-color: #ffffff;
+  padding: var(--space-xs) 0; /* Reduced padding for a smaller footer bar */
+}
+
+/* Instagram images section (if required) */
+.footer-column img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-md);
+  margin-top: var(--space-xs);
+}
+
+/* Footer text */
+.footer-text {
+  font-size: var(--font-size-sm);
+  color: #333333;
+}
+/* Small screens (Phones, including iPhones and Google Pixel) */
+@media only screen and (max-width: 767px) {
+  .google-map-container {
+    display: none; /* Hide Google Map */
+  }
+
+  .footer-container {
+    padding:0 8px;
+    min-height: 350px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-column {
+    margin-left: 0;
+  }
+
+  .footer-bar {
+    margin-top: var(--space-xs);
+    padding: var(--space-xs) 0;
+  }
+}
+
+/* Medium screens (Tablets including iPad Pro Max) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .google-map-container {
+    display: none; /* Hide Google Map */
+  }
+
+  .map-footer-container {
+    flex-direction: column;
+  }
+
+  .google-map-container, .footer-container {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+
+  .footer-container {
+    padding: var(--space-sm) var(--space-md);
+    min-height: 300px;
+  }
+}
+
+/* Large screens (Desktops and larger tablets) */
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  .map-footer-container {
+    flex-direction: row; /* Align side by side on larger screens */
+  }
+
+  .footer-container {
+    min-height: 250px; /* Set a larger height for larger screens */
+  }
+}
+
+/* Extra large screens (Larger Desktops) */
+@media only screen and (min-width: 1441px) {
+  .map-footer-container {
+    flex-direction: row; /* Align side by side on extra large screens */
+  }
+
+  .footer-container {
+    min-height: 280px; /* Set a larger height for extra large screens */
+  }
+}

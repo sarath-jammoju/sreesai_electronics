@@ -1,0 +1,666 @@
+/* ===============================
+      Css Reset
+===================================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--background-primary);
+    color: var(--color-primary);
+  }
+  
+  /*==============================
+           Root Variables
+  =================================*/
+  
+  :root {
+    /* Fonts */
+    --font-primary: 'Open Sans', sans-serif;
+    --font-secondary: 'Poppins', sans-serif;
+    --font-tertiary: 'Roboto', sans-serif;
+  
+    /* Colors */
+    --color-primary: #1f3a64; /* Dark Blue */
+    --color-secondary: #f4a261; /* Light Orange */
+    --color-tertiary: #e76f51; /* Red-Orange */
+    --background-primary: #F3EFF5; /* Light Gray Background */
+    --background-secondary: #ffffff; /* Light Text */
+    --background-tertiary: #666666; /* Light Text */
+  
+    /* Spacing (margins, paddings) */
+    --space-xs: 0.5rem; /* 8px */
+    --space-sm: 1rem; /* 16px */
+    --space-md: 1.5rem; /* 24px */
+    --space-lg: 2rem; /* 32px */
+    --space-xl: 3rem; /* 48px */
+  
+    /* Font Sizes */
+    --font-size-sm: 0.875rem; /* 14px */
+    --font-size-md: 1rem; /* 16px */
+    --font-size-lg: 1.125rem; /* 18px */
+    --font-size-xl: 1.5rem; /* 24px */
+    --font-size-xxl: 2rem; /* 32px */
+  
+    /* Border Radius */
+    --border-radius-sm: 0.25rem; /* 4px */
+    --border-radius-md: 0.5rem; /* 8px */
+    --border-radius-lg: 1rem; /* 16px */
+  
+    /* Box Shadows */
+    --box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --box-shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --box-shadow-heavy: 0 8px 16px rgba(0, 0, 0, 0.2);
+  
+    /* Z-Index */
+    --z-index-base: 1;
+  }
+  
+  /* =============================== 
+          Hero Section 
+  ====================================*/
+  
+  .HeroSection-container {
+    margin-top: var(--space-xl);
+    width: 100%;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* To avoid image overflow */
+    border: 1px solid var(--color-border); /* Adjust border color */
+  }
+  
+  .HeroSection-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire section */
+    position: absolute; /* Keeps image in the background */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Positions image behind text */
+  }
+  
+  .HeroSection-container h2 {
+    font-size: var(--font-size-xxl);
+    color: var(--color-primary);
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds text shadow for better readability */
+    z-index: 1; /* Ensures text stays above the image */
+  }
+  
+  /* ==========================================================
+                  Hero Section -  Media Queries 
+  =============================================================*/
+  
+  /* Small screens (Phones, including iPhones and Google Pixel) */
+  @media only screen and (max-width: 767px) {
+    .HeroSection-container {
+      height: 300px; /* Reduced height for small screens */
+      margin-top: 1px; /* Adjusted top margin */
+      
+    }
+  
+    .HeroSection-container img {
+      object-position: center; /* Center image for better coverage */
+      width: 100%;
+    }
+  
+    .HeroSection-container h2 {
+      font-size: var(--font-size-lg); /* Adjust font size for better readability */
+      text-align: center; /* Center-align text for small screens */
+      padding: 0 15px; /* Add padding for mobile devices */
+    }
+  }
+  
+  /* Medium screens (Tablets including iPad Pro Max) */
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .HeroSection-container {
+      height: 400px; /* Adjusted height for tablets */
+      margin-top: var(--space-lg); /* Adjusted top margin */
+    }
+  
+    .HeroSection-container h2 {
+      font-size: var(--font-size-xl); /* Adjust font size for tablets */
+      text-align: center; /* Center-align text */
+      padding: 0 20px; /* Add padding for tablets */
+    }
+  }
+  
+  /* Large screens (Desktops and larger tablets) */
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    .HeroSection-container {
+      height: 550px; /* Default height for larger screens */
+      margin-top: var(--space-xl); /* Default margin */
+    }
+  
+    .HeroSection-container h2 {
+      font-size: var(--font-size-xxl); /* Larger font size for larger screens */
+      text-align: center; /* Center-align text */
+    }
+  }
+  
+  /* Extra large screens (Larger Desktops) */
+  @media only screen and (min-width: 1441px) {
+    .HeroSection-container {
+      height: 600px; /* Increased height for very large screens */
+      margin-top: var(--space-xl); /* Default margin */
+    }
+  
+    .HeroSection-container h2 {
+      font-size: var(--font-size-xxxl); /* Extra large font size */
+      text-align: center; /* Center-align text */
+    }
+  }
+  
+  
+  
+  /* ================================= 
+            Partner Logos
+  =====================================*/
+  
+  .section-header {
+    margin-top: var(--space-lg);
+    font-size: var(--font-size-xxl);
+    font-weight: bold;
+    padding: var(--space-xs);
+    margin-bottom: var(--space-lg);
+    color: var(--color-primary);
+    text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5);
+    text-align: center;
+  }
+  
+  .slick-slider {
+    display: flex;
+    justify-content: center;
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .slick-track {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  
+  .carousel-item {
+    display: inline-block;
+    margin-right: var(--space-lg);
+    padding: var(--space-sm);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--box-shadow-light);
+  }
+  
+  .carousel-logo {
+    max-height: 80px;
+    object-fit: contain;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Smooth scrolling animation */
+  .slick-slide {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Hide navigation arrows */
+  .slick-prev, .slick-next {
+    display: none !important;
+  }
+  
+  .slick-dots {
+    display: none !important;
+  }
+  
+  
+  /* =============================== 
+          Products 
+  ====================================*/
+  
+  .product-heading {
+    text-align: center;
+    color: var(--color-primary);
+    text-shadow: 4px 4px 8px rgba(94, 83, 83, 0.5);
+    margin-top: var(--space-xl);
+    font-size: var(--font-size-xxl);
+  }
+  
+  .product-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: var(--space-md);
+  }
+  
+  .product-card {
+    background-color: var(--background-secondary);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow-light);
+    padding: var(--space-sm);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product-card img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Adjust height based on width */
+    object-fit: cover;
+    border-radius: var(--border-radius-md);
+  }
+  
+  .product-card h3 {
+    margin: var(--space-sm) 0;
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    color: #333;
+    text-align: justify;
+  }
+  
+  .product-card h4 {
+    font-size: var(--font-size-sm);
+    color: #666;
+    line-height: 1.5;
+    text-align: justify;
+  }
+  
+  /* ============================    Products - Media Queries   =============================*/
+  
+  /* Small screens (Phones, including iPhones and Google Pixel) */
+  @media only screen and (max-width: 767px) {
+    .product-heading {
+      font-size: var(--font-size-lg); /* Reduced font size */
+      margin-top: var(--space-md);
+    }
+  
+    .product-cards-grid {
+      grid-template-columns: 1fr; /* Single column for small screens */
+      padding: var(--space-sm);
+    }
+  
+    .product-card {
+      margin-bottom: var(--space-md);
+    }
+  
+    .product-card img {
+      height: 200px; /* Limit image height */
+    }
+  
+    .product-card h3 {
+      font-size: var(--font-size-lg); /* Adjust font size */
+      color: var(--color-primary);
+    }
+  
+    .product-card h4 {
+      font-size: var(--font-size-md); /* Adjust font size */
+      color: black;
+      text-align: start;
+      font-weight: 300;
+    }
+  }
+  
+  /* Medium screens (Tablets including iPad Pro Max) */
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .product-heading {
+      font-size: var(--font-size-xl); /* Adjusted font size for tablets */
+    }
+  
+    .product-cards-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2-column layout for tablets */
+    }
+  
+    .product-card img {
+      height: 350px; /* Adjust height for better visuals */
+    }
+  
+    .product-card h3 {
+      font-size: var(--font-size-lg); /* Slightly reduced font size */
+    }
+  
+    .product-card h4 {
+      font-size: var(--font-size-sm); /* Adjust font size */
+    }
+  }
+  
+  /* Large screens (Desktops and larger tablets) */
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    .product-heading {
+      font-size: var(--font-size-xxl); /* Large font size for headings */
+    }
+  
+    .product-cards-grid {
+      grid-template-columns: repeat(3, 1fr); /* 3-column layout */
+    }
+  
+    .product-card img {
+      height: 250px; /* Adjusted image height */
+    }
+  
+    .product-card h3 {
+      font-size: var(--font-size-xl); /* Larger font size */
+    }
+  
+    .product-card h4 {
+      font-size: var(--font-size-md); /* Larger font size for description */
+    }
+  }
+  
+  /* Extra large screens (Larger Desktops) */
+  @media only screen and (min-width: 1441px) {
+    .product-heading {
+      font-size: var(--font-size-xxl); /* Extra large font size */
+    }
+  
+    .product-cards-grid {
+      grid-template-columns: repeat(3, 1fr); /* 4-column layout for large screens */
+    }
+  
+    .product-card img {
+      height: 300px; /* Larger image height for big screens */
+    }
+  
+    .product-card h3 {
+      font-size: var(--font-size-xxl); /* Larger font size for titles */
+      text-align: justify;
+    }
+  
+    .product-card h4 {
+      font-size: var(--font-size-lg); /* Larger font size for descriptions */
+      text-align: justify;
+    }
+  }
+  
+  
+  /* ================================================================
+            Service,  Spares & Dialouge box
+  ====================================================================*/
+  .services {
+    background-color: var(--color-secondary);
+    padding: var(--space-sm);
+    color: var(--color-background);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow-medium);
+    max-width: 1120px;
+    margin: 80px auto;
+    text-align: center;
+    font-size: var(--font-size-xxl);
+  }
+  
+  /* ========          Dialouge box    =========*/
+  .dialog-box-container {
+    background-color: var(--color-background);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow-medium);
+    max-width: 1120px;
+    margin: 0 auto 80px;
+    text-align: center;
+  }
+  
+  .dialog-box-header, .dialog-box-description {
+    margin-bottom: var(--space-md);
+  }
+  
+  .dialog-box-header {
+    font-size: var(--font-size-xxl);
+    font-weight: bold;
+    color: var(--color-primary);
+  }
+  
+  .dialog-box-description {
+    font-size: var(--font-size-md);
+    color: var(--color-text-light);
+  }
+  
+  .dialog-form-group {
+    margin-bottom: var(--space-sm);
+    text-align: left;
+  }
+  
+  .dialog-form-label {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-dark);
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-weight: 500;
+  }
+  
+  .dialog-form-input {
+    width: 100%;
+    padding: var(--space-sm);
+    font-size: var(--font-size-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    margin-bottom: var(--space-sm);
+    color: var(--color-text-dark);
+  }
+  
+  .dialog-error-message {
+    color: var(--color-accent);
+    font-size: var(--font-size-sm);
+    margin-top: var(--space-xs);
+  }
+  
+  .dialog-submit-button {
+    width: 100%;
+    padding: var(--space-sm);
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-md);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dialog-submit-button {
+    grid-column: 1; /* Align submit button under the input */
+    margin-top: -2rem; /* Ensure space between the form fields and button */
+  }
+  
+  .dialog-submit-button:hover {
+    background-color: var(--color-secondary);
+  }
+  
+  .dialog-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .dialog-form-left, .dialog-form-right {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .dialog-form-right {
+    justify-content: flex-start;
+    text-align: left;
+  }
+  
+  .contact-details {
+    padding: var(--space-md);
+    background-color: var(--color-light);
+  }
+  
+  .contact-details h3{
+    font-size: var(--font-size-xxl);
+    color: var(--color-primary);
+  }
+  
+  .contact-details h4 {
+    font-size: var(--font-size-md);
+    color: var(--background-tertiary);
+    line-height: var(--space-md);
+  }
+  
+  
+  /* =====================================================================
+            Service,  Spares & Dialouge box   -   Media Queries
+  ========================================================================*/
+  
+  /* Small screens (Phones, iPhones) */
+  @media only screen and (max-width: 767px) {
+    .services {
+      font-size: var(--font-size-xl);  /* Reduced font size for better readability */
+      padding: var(--space-xs);
+    }
+  
+    .dialog-box-container {
+      padding: var(--space-sm);
+      margin: 10px;
+    }
+  
+    .dialog-box-header {
+      font-size: var(--font-size-lg);  /* Reduced font size */
+    }
+  
+    .dialog-box-description {
+      font-size: var(--font-size-sm);
+    }
+  
+    .dialog-form {
+      display: block;  /* Stack the form fields vertically */
+    }
+  
+    .dialog-form-left, .dialog-form-right {
+      display: block;
+      width: 100%;  /* Ensure the form sections take full width */
+      margin-bottom: var(--space-sm);
+    }
+  
+    .dialog-form-group {
+      text-align: left;
+    }
+  
+    .contact-details h3 {
+      font-size: var(--font-size-lg);
+    }
+    .contact-details h4{
+      font-size: var(--font-size-md);
+    }
+  
+    .dialog-form-input {
+      font-size: var(--font-size-sm);  /* Reduced font size */
+    }
+  }
+  
+  /* Medium screens (Tablets) */
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .dialog-box-container {
+      padding: var(--space-md);
+      margin: 20px;
+    }
+  
+    .dialog-box-header {
+      font-size: var(--font-size-xl);
+    }
+  
+    .dialog-box-description {
+      font-size: var(--font-size-md);
+    }
+  
+    .dialog-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+    }
+  
+    .dialog-form-left, .dialog-form-right {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .dialog-form-input {
+      font-size: var(--font-size-md); /* Larger font size */
+    }
+  
+    .contact-details h3 {
+      font-size: var(--font-size-xl);
+    }
+    .contact-details h4{
+      font-size: var(--font-size-md);
+    }
+  }
+  
+  /* Large screens (Desktops) */
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    .services {
+      font-size: var(--font-size-xxl);
+      padding: var(--space-lg);
+    }
+  
+    .dialog-box-container {
+      padding: var(--space-lg);
+      margin: 50px auto;
+    }
+  
+    .dialog-box-header {
+      font-size: var(--font-size-xxl);
+    }
+  
+    .dialog-box-description {
+      font-size: var(--font-size-lg);
+    }
+  
+    .dialog-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+    }
+  
+    .contact-details h3 {
+      font-size: var(--font-size-xxl);
+    }
+    .contact-details h4{
+      font-size: var(--font-size-lg);
+    }
+  }
+  
+  /* Extra large screens (Larger Desktops) */
+  @media only screen and (min-width: 1441px) {
+    .services {
+      font-size: var(--font-size-xxl);
+      padding: var(--space-xl);
+    }
+  
+    .dialog-box-container {
+      padding: var(--space-xl);
+      margin: 80px auto;
+    }
+  
+    .dialog-box-header {
+      font-size: var(--font-size-xxl);
+    }
+  
+    .dialog-box-description {
+      font-size: var(--font-size-lg);
+    }
+  
+    .dialog-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+    }
+  
+    .contact-details h3 {
+      font-size: var(--font-size-xl);
+    }
+    .contact-details h4{
+      font-size: var(--font-size-lg);
+    }
+  }
+  

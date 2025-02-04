@@ -1,0 +1,190 @@
+/* =======================================
+      Contact Us
+==========================================*/
+
+/* Container for the entire contact section */
+.contact-container {
+    display: flex;
+    font-family: var(--font-primary), sans-serif;
+    padding: var(--space-sm);
+    height: 600px; /* Fixed height for the container */
+    justify-content: space-between;
+    align-items: stretch; /* Ensure both sides stretch equally */
+    padding-top: var(--space-lg); /* Added space to prevent overlap with fixed navbar */
+    max-width: 1080px; /* Set max-width */
+    margin: var(--space-lg) auto; /* Center the container and evenly distribute empty space */
+    background-color: #ffffff;
+  }
+  
+  /* Left side personal information container */
+  .contact-info-container {
+    width: 50%; /* Left side takes 50% of the container width */
+    padding: var(--space-sm);
+    line-height: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the content */
+    align-items: flex-start; /* Align the content to the left */
+    text-align: left; /* Align text to the left */
+    height: 100%; /* Ensure it takes the full height */
+  }
+  
+  /* Right side contact form container */
+  .contact-form-container {
+    width: 50%; /* Right side takes 50% of the container width */
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Evenly distribute space in the form */
+    height: 400px; /* Ensure it takes the full height */
+  }
+  
+  .contact-form-container h2 {
+    font-size: var(--font-size-xxl);
+    margin-bottom: var(--space-xs);
+    color: var(--color-primary);
+    text-align: center;
+    z-index: 10; /* Ensure heading stays on top */
+    position: relative; /* Allow z-index to work */
+  }
+  
+  /* Form and label styles */
+  .contact-form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between; /* Spread the elements evenly */
+    height: 100%; /* Form should take up the full height */
+  }
+  
+  .contact-form-container label {
+    font-size: var(--font-size-md);
+    margin-bottom: var(--space-xs); /* Reduced margin for compact form */
+    color: var(--color-text-light);
+    width: 100%; /* Ensure labels span the entire width */
+  }
+  
+  /* Input and textarea fields */
+  .contact-form-container input,
+  .contact-form-container textarea {
+    font-size: var(--font-size-md);
+    padding: 10px;
+    margin-bottom: var(--space-sm); /* Reduced margin to minimize gaps */
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    width: 100%; /* Full width of the form container */
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  .contact-form-container input:focus,
+  .contact-form-container textarea:focus {
+    border-color: var(--color-accent);
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+  }
+  
+  .contact-form-container textarea {
+    resize: none;
+    height: 100px;
+  }
+  
+  /* Button styling */
+  .contact-form-container button {
+    background: var(--color-primary);
+    color: white;
+    font-size: var(--font-size-md);
+    padding: var(--space-xs);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    width: 100%; /* Button spans the same width as inputs */
+    position: relative;
+    margin-bottom: -80px; /* Negative margin to overlap the footer */
+    z-index: 20; /* Ensure the button stays on top */
+  }
+  
+  .contact-form-container button:hover {
+    background: var(--color-accent);
+  }
+  
+
+
+  /* Small screens (Phones: <= 767px) */
+@media only screen and (max-width: 767px) {
+    .contact-container {
+      flex-direction: column; /* Stack elements vertically */
+      height: auto;
+      padding: var(--space-xs);
+      max-width: 100%; /* Full width */
+      margin: 10px 16px;
+    }
+  
+    .contact-info-container,
+    .contact-form-container {
+      width: 100%; /* Full width for both sections */
+      padding: var(--space-xs);
+    }
+
+    .contact-form-container h2  {
+      font-size: 24px;
+    }
+  
+    .contact-form-container {
+      margin-top: 20px;
+      height: auto;
+    }
+  
+    .contact-form-container button {
+      margin-bottom: 0; /* Remove negative margin */
+    }
+  }
+  
+  /* Medium screens (Tablets: 768px to 1024px) */
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .contact-container {
+      flex-direction: column; /* Stack elements vertically */
+      height: auto;
+      padding: var(--space-sm);
+      max-width: 90%; /* Slightly reduce width */
+    }
+  
+    .contact-info-container,
+    .contact-form-container {
+      width: 100%; /* Full width */
+      padding: var(--space-sm);
+    }
+  
+    .contact-form-container {
+      height: auto;
+    }
+  
+    .contact-form-container button {
+      margin-bottom: 0;
+    }
+  }
+  
+  /* Large screens (Laptops: 1025px to 1440px) */
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    .contact-container {
+      max-width: 90%; /* Slightly reduce max width */
+      padding: var(--space-md);
+    }
+  
+    .contact-info-container,
+    .contact-form-container {
+      width: 48%; /* Adjust width to fit better */
+    }
+  
+    .contact-form-container {
+      height: auto;
+    }
+  }
+  
+  /* Extra-large screens (Desktops: 1441px and above) */
+  @media only screen and (min-width: 1441px) {
+    .contact-container {
+      max-width: 1080px; /* Keep the default width */
+    }
+  }
+  
